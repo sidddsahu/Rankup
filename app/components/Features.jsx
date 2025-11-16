@@ -88,8 +88,8 @@ export default function Features() {
             className="text-4xl font-extrabold leading-snug drop-shadow-sm"
             style={{ color: primary }}
           >
-            Everything You Need to Crack NEET-UG —
-            <span className="text-purple-600"> Inside One App</span>
+            Everything You Need to Crack NEET-UG
+            <span className="text-gray-800"> Inside One App</span>
           </h2>
 
           <p className="text-lg text-gray-600 mt-4">

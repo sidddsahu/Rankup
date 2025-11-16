@@ -51,9 +51,9 @@ export default function Testimonials() {
         {/* Slider */}
         <div className="mt-14">
           <Swiper
-            spaceBetween={30}
+            spaceBetween={20}
             centeredSlides={true}
-            slidesPerView={1}
+            slidesPerView={3}
             pagination={{ clickable: true }}
             autoplay={{ delay: 2600 }}
             modules={[Pagination, Autoplay]}
