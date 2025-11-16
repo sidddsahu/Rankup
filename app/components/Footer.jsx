@@ -13,7 +13,7 @@ export default function Footer() {
       <div className="relative z-10 max-w-7xl mx-auto px-6">
 
         {/* TOP GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-10">
 
           {/* Brand */}
           <div>
@@ -84,19 +84,19 @@ export default function Footer() {
         <div className="border-t border-white/20 mt-12 mb-8"></div>
 
         {/* App Download Buttons */}
-        <div className="flex flex-wrap items-center justify-between gap-6">
+        <div className="flex  items-center justify-between gap-6">
 
           {/* Play Store */}
           <a
             href="#"
             className="group flex items-center gap-3 bg-white/10 border border-white/20 backdrop-blur-md
-              px-6 py-3 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300
+              px-2 py-3 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300
               hover:-translate-y-1 hover:bg-white/20"
           >
             <FaGooglePlay className="text-white text-2xl group-hover:scale-110 transition" />
             <div>
               <p className="text-xs text-blue-100">GET IT ON</p>
-              <p className="text-white font-semibold text-lg">Google Play</p>
+              <p className="text-white font-semibold text-sm md:text-xl">Google Play</p>
             </div>
           </a>
 
@@ -110,7 +110,7 @@ export default function Footer() {
             <FaApple className="text-white text-2xl group-hover:scale-110 transition" />
             <div>
               <p className="text-xs text-blue-100">Download on the</p>
-              <p className="text-white font-semibold text-lg">App Store</p>
+              <p className="text-sm md:text-xl">App Store</p>
             </div>
           </a>
         </div>

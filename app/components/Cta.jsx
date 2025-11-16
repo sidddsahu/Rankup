@@ -29,19 +29,19 @@ export default function Cta() {
           {/* DOWNLOAD BADGES */}
 
                {/* App Download Buttons */}
-               <div className="flex flex-wrap items-center justify-btween mt-4 gap-6">
+               <div className="flex items-center justify-btween mt-4 gap-6">
 
                  {/* Play Store */}
                  <a
                    href="#"
                    className="group flex items-center gap-3 bg-black border border-white/20 backdrop-blur-md
-                     px-6 py-3 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300
+                     px-2 py-3 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300
                      hover:-translate-y-1 hover:bg-[#295176]"
                  >
                    <FaGooglePlay className="text-white text-2xl group-hover:scale-110 transition" />
                    <div>
                      <p className="text-xs text-blue-100">GET IT ON</p>
-                     <p className="text-white font-semibold text-lg">Google Play</p>
+                     <p className="text-white font-semibold text-sm md:text-lg">Google Play</p>
                    </div>
                  </a>
 
@@ -55,7 +55,7 @@ export default function Cta() {
                    <FaApple className="text-white text-2xl group-hover:scale-110 transition" />
                    <div>
                      <p className="text-xs text-blue-100">Download on the</p>
-                     <p className="text-white font-semibold text-lg">App Store</p>
+                     <p className="text-white font-semibold text-sm md:text-lg">App Store</p>
                    </div>
                  </a>
                </div>
