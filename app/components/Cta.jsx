@@ -11,7 +11,7 @@ export default function Cta() {
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10 bg-[url('/bg-lines.svg')] bg-cover bg-center pointer-events-none"></div>
 
-      <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 items-center gap-14 relative z-10">
+      <div className="container shadow-lg  mx-auto px-6 grid grid-cols-1 md:grid-cols-2 items-center justify-between gap-14 relative z-10">
 
         {/* LEFT CONTENT */}
         <div>
@@ -64,9 +64,9 @@ export default function Cta() {
         {/* RIGHT SIDE IMAGE */}
         <div className="flex justify-center">
           <img
-            src="/rankup-mobile-mockup.png"
+            src="/screen1.png"
             alt="RankUp App"
-            className="w-[290px] md:w-[360px] drop-shadow-2xl rounded-3xl"
+            className="w-[390px] md:w-[600px] drop-shadow-2xl rounded-3xl"
           />
         </div>
       </div>

@@ -27,3 +27,15 @@ body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Rob
   pointer-events: none;
 }
 
+.radio{
+  background-image: url("/screen.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.continue{
+  background-image: url("/screen1.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

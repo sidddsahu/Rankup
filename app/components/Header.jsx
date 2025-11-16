@@ -13,9 +13,9 @@ export default function Header() {
         <div className="flex items-center gap-2">
 <a href="/">
           <img
-            src="/logo.png"
+            src="/logoss.png"
             alt="Rankup Logo"
-            className="h-8 w-auto"
+            className="h-10  object-contain"
           />
           </a>
 

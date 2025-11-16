@@ -17,7 +17,18 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
-            <h2 className="text-3xl font-bold tracking-wide">Rankup</h2>
+               <div className="flex items-center gap-2">
+<a href="/">
+          <img
+            src="/logoss.png"
+            alt="Rankup Logo"
+            className="h-10  object-contain"
+          />
+          </a>
+
+        </div>
+
+            {/* <h2 className="text-3xl font-bold tracking-wide">Rankup</h2> */}
             <p className="text-blue-100 mt-3 leading-relaxed">
               Smarter revision for NEET-UG, NEET-PG & FMGE students using Flashcards, Q-banks & AI-driven analytics.
             </p>

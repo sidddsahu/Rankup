@@ -180,16 +180,19 @@ export default function Features() {
             </p>
 
             <div
-              className="mt-6 h-64 rounded-xl border flex flex-col items-center justify-center"
-              style={{
-                background: primary + "10",
-                borderColor: primary + "30"
-              }}
+              className="mt-2 min-h-64 radio rounded-xl border flex flex-col items-center justify-center"
+              // style={{
+              //   background: primary + "10",
+              //   borderColor: primary + "30"
+              // }}
             >
-              <FaClipboardList size={42} style={{ color: primary }} />
-              <p className="text-sm mt-2" style={{ color: primary }}>
+
+
+              {/* <img src="/screen.png" alt="" /> */}
+              {/* <FaClipboardList size={42} style={{ color: primary }} /> */}
+              {/* <p className="text-sm mt-2" style={{ color: primary }}>
                 Mobile preview area
-              </p>
+              </p> */}
             </div>
           </div>
 
