@@ -58,8 +58,8 @@ export default function Testimonials() {
             autoplay={{ delay: 2600 }}
             modules={[Pagination, Autoplay]}
             breakpoints={{
-              768: { slidesPerView: 3 },
-              1024: { slidesPerView: 3 }
+              768: { slidesPerView: 1 },
+              1024: { slidesPerView: 2 }
             }}
           >
             {data.map((t, i) => (

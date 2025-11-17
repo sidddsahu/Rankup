@@ -11,7 +11,7 @@ export default function Cta() {
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10 bg-[url('/bg-lines.svg')] bg-cover bg-center pointer-events-none"></div>
 
-      <div className="container shadow-lg  mx-auto px-6 grid grid-cols-1 md:grid-cols-2 items-center justify-between gap-14 relative z-10">
+      <div className="container   mx-auto px-6 grid grid-cols-1 md:grid-cols-2 items-center justify-between gap-14 relative z-10">
 
         {/* LEFT CONTENT */}
         <div>
@@ -62,13 +62,45 @@ export default function Cta() {
         </div>
 
         {/* RIGHT SIDE IMAGE */}
-        <div className="flex justify-center">
-          <img
-            src="/screen1.png"
-            alt="RankUp App"
-            className="w-[390px] md:w-[600px] drop-shadow-2xl rounded-3xl"
-          />
-        </div>
+       {/* RIGHT SIDE IMAGE */}
+<div className="relative flex justify-center items-center w-full">
+
+  <div className="relative w-full md:w-[480px] flex justify-center items-center">
+
+    {/* Image 1 */}
+    <img
+      src="/screen1.png"
+      alt="RankUp App"
+      className="
+        w-[100%]
+        md:w-[85%]
+        lg:w-[95%]
+        rounded-3xl
+        drop-shadow-2xl
+        object-cover
+      "
+    />
+
+    {/* Image 2 — Overlapping */}
+    <img
+      src="/screen2.png"
+      alt="RankUp App"
+      className="
+        absolute
+        right-0
+        bottom-0
+        w-[47%]
+        md:w-[50%]
+        lg:w-[45%]
+        rounded-3xl
+        drop-shadow-xl
+        object-cover
+      "
+    />
+  </div>
+
+</div>
+
       </div>
     </section>
   );

@@ -48,7 +48,7 @@ export default function Features() {
   return (
     <section
       className="
-        relative py-20
+        relative py-10
         bg-gradient-to-br from-white via-[#f3f9ff] to-[#e7f3ff]
         overflow-hidden
       "
