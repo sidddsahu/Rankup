@@ -33,6 +33,9 @@ export default function Hero() {
         <p className="text-sm uppercase tracking-wide text-purple-200 font-medium">
           New: NEET-UG focused — curated question banks
         </p>
+          {/* <p className="text-sm uppercase tracking-wide text-purple-200 font-medium">
+          New: NEET-UG focused — curated question banks */}
+        {/* </p> */}
 
         <h1 className="mt-4 text-4xl md:text-6xl font-extrabold leading-tight text-left drop-shadow-lg">
           RankUp — Ace NEET-UG with Smart Revision
