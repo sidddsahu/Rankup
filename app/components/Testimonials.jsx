@@ -50,18 +50,19 @@ export default function Testimonials() {
 
         {/* Slider */}
         <div className="mt-14">
-          <Swiper
-            spaceBetween={20}
-            centeredSlides={true}
-            slidesPerView={3}
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 2600 }}
-            modules={[Pagination, Autoplay]}
-            breakpoints={{
-              768: { slidesPerView: 1 },
-              1024: { slidesPerView: 2 }
-            }}
-          >
+         <Swiper
+  spaceBetween={20}
+  centeredSlides={true}
+  pagination={{ clickable: true }}
+  autoplay={{ delay: 2600 }}
+  modules={[Pagination, Autoplay]}
+  breakpoints={{
+    0: { slidesPerView: 1 },      // 📱 Mobile
+    640: { slidesPerView: 2 },    // 📟 Tablet
+    1024: { slidesPerView: 3 }    // 🖥 Desktop
+  }}
+>
+
             {data.map((t, i) => (
               <SwiperSlide key={i}>
 

@@ -69,7 +69,7 @@ export default function Header() {
 
             <nav className="flex flex-col gap-6">
               <a
-                href="/blogs"
+                href="/blog"
                 className="text-white text-lg font-medium hover:text-purple-200 transition"
               >
                 Blogs
