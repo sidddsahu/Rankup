@@ -14,13 +14,21 @@ export default function Hero() {
           priority
           className="object-cover"
         />
+
+         <Image
+          src="/deepak2.png"
+          alt="RankUp NEET-UG background"
+          fill
+          priority
+          className="object-cover md:hidden"
+        />
       </div>
 
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-[rgba(0,0,0,0.65)] to-transparent"></div>
 
       {/* Content */}
-      <div className="relative z-10 py-20 md:py-32 px-6 md:px-16 text-white max-w-4xl">
+      <div className="relative top-10 z-10 py-20 md:py-32 px-6 m md:px-16 text-white max-w-4xl">
 
         <p className="text-sm uppercase tracking-wide text-purple-200 font-medium">
           New: NEET-UG focused — curated question banks
@@ -69,6 +77,7 @@ export default function Hero() {
         </div>
 
       </div>
+
     </header>
   );
 }
