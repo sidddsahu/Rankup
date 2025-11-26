@@ -8,7 +8,7 @@ export default function BlogDetail({ params }) {
     id: 1,
      slug: "how-to-score-650-plus-in-neet",
     title: "How to Score 650+ in NEET – Complete Strategy",
-    cover: "/blog1.jpg",
+    cover: "https://targetpublications.org/_next/image?url=https%3A%2F%2Fcdn.targetpublications.org%2Fstudent-data-mining%2Fposts%2Fv5bSRQZqqaPlM5UXJJta0YOotz0etcVSYJ7ydBLV.webp&w=3840&q=75",
     date: "Nov 2024",
     author: "RankUp Team",
     readTime: "8 min read",
@@ -42,7 +42,7 @@ export default function BlogDetail({ params }) {
           <img
             src={blog.cover}
             alt={blog.title}
-            className="w-full h-full object-cover"
+            className="w-full h-full"
           />
         </div>
 

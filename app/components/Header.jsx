@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 
@@ -11,40 +12,40 @@ export default function Header() {
 
         {/* Logo Section */}
         <div className="flex items-center gap-2">
-<a href="/">
+<Link href="/">
           <img
             src="/logoss.png"
             alt="Rankup Logo"
             className="h-10  object-contain"
           />
-          </a>
+         </Link>
 
         </div>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-10">
-          <a
+         <Link
             href="/blog"
             className="text-white text-base font-medium hover:text-purple-200 transition"
           >
             Blogs
-          </a>
+         </Link>
 
-          <a
+         <Link
             href="/faqs"
             className="text-white text-base font-medium hover:text-purple-200 transition"
           >
             FAQs
-          </a>
+         </Link>
 
-          <a
+         <Link
             href="/download"
             className="px-6 py-2 border border-white text-white rounded-full text-base font-medium
             hover:bg-white hover:text-[#624A76] transition flex items-center gap-2"
           >
             Download Now
             <span>➜</span>
-          </a>
+         </Link>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -68,25 +69,25 @@ export default function Header() {
             </button>
 
             <nav className="flex flex-col gap-6">
-              <a
+              <Link
                 href="/blog"
                 className="text-white text-lg font-medium hover:text-purple-200 transition"
               >
                 Blogs
-              </a>
-              <a
+              </Link>
+             <Link
                 href="/faqs"
                 className="text-white text-lg font-medium hover:text-purple-200 transition"
               >
                 FAQs
-              </a>
-              <a
+             </Link>
+             <Link
                 href="/download"
                 className="px-4 py-3 border border-white text-white rounded-full text-lg font-medium
                 hover:bg-white hover:text-[#624A76] transition flex items-center gap-2"
               >
                 Download Now ➜
-              </a>
+             </Link>
             </nav>
           </div>
         </div>

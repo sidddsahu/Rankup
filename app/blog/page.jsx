@@ -10,7 +10,7 @@ export default function BlogPage() {
       date: "Nov 2024",
       author: "RankUp Team",
       category: "NEET Tips",
-      cover: "/blog1.jpg",
+      cover: "https://targetpublications.org/_next/image?url=https%3A%2F%2Fcdn.targetpublications.org%2Fstudent-data-mining%2Fposts%2Fv5bSRQZqqaPlM5UXJJta0YOotz0etcVSYJ7ydBLV.webp&w=3840&q=75",
     },
     {
       id: 2,
@@ -43,7 +43,7 @@ export default function BlogPage() {
                 <img
                   src={blog.cover}
                   alt={blog.title}
-                  className="w-full h-full object-cover hover:scale-110 transition duration-500"
+                  className="w-full h-full  hover:scale-110 transition duration-500"
                 />
               </div>
 
