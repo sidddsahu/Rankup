@@ -14,7 +14,7 @@ export default function Page() {
     "@type": "WebPage",
     name: "RankUp — NEET-UG Preparation",
     description: "RankUp provides smart flashcards, daily plans and analytics for NEET-UG aspirants.",
-    url: "https://yourdomain.com/"
+    url: "https://www.rankupp.in"
   };
 
   return (
