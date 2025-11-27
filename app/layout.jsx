@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
         {/* IndexNow meta */}
         <meta
           name="indexnow"
-          content="https://www.bing.com/indexnow?url=https://www.rankupp.in&key=YOUR_INDEXNOW_KEY"
+          content="https://www.bing.com/indexnow?url=https://www.rankupp.in&key=706b52414be744fc89aebf68cd06571b"
         />
       </head>
       <body>
