@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: 'https://yourdomain.com',
+  siteUrl: 'https://www.rankupp.in',
   generateRobotsTxt: true,
   changefreq: 'daily',
   priority: 0.7,
