@@ -6,8 +6,88 @@ import {
   FaChartLine,
   FaLayerGroup,
 } from "react-icons/fa";
+import Script from "next/script";
 
 export default function WhyChooseUs() {
+  // ================================
+  // 🔥 ADVANCED SEO SCHEMA (JSON-LD)
+  // ================================
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Why Choose RankUp Features",
+    "description": "Top NEET-UG preparation features including flashcards, QBank, AI analytics and test tracking.",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "Smart Flashcards",
+          "operatingSystem": "Android, iOS, Web",
+          "applicationCategory": "EducationApplication",
+          "description": "NEET-UG flashcards using spaced repetition and active recall.",
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "Smart QBank",
+          "operatingSystem": "Android, iOS, Web",
+          "applicationCategory": "EducationApplication",
+          "description": "20,000+ NEET high-yield questions with explanations.",
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "Test Score Tracking",
+          "operatingSystem": "Android, iOS, Web",
+          "applicationCategory": "EducationApplication",
+          "description": "AI-powered analytics for accuracy, weak topics, and growth tracking.",
+        }
+      }
+    ]
+  };
+
+  // ================================
+  // 🔥 FAQ SCHEMA (SEO FOR RICH SNIPPETS)
+  // ================================
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why should I choose RankUp for NEET-UG preparation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RankUp uses scientifically proven active recall and spaced repetition, helping students memorize faster and retain longer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does RankUp offer high-yield NEET questions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, RankUp provides 20,000+ NEET-UG level questions with detailed explanations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can RankUp track my test performance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, RankUp’s AI Test Tracker gives deep insights into accuracy, weak topics, and score growth."
+        }
+      }
+    ]
+  };
+
   return (
     <section className="relative py-20 overflow-hidden bg-[#295176] text-white">
 
@@ -37,9 +117,7 @@ export default function WhyChooseUs() {
 
           {/* Card 1 */}
           <div className="glass-card group p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-xl">
-            <div className="text-yellow-300 mb-4">
-              <FaBrain size={42} />
-            </div>
+            <div className="text-yellow-300 mb-4"><FaBrain size={42} /></div>
             <h3 className="text-2xl font-bold mb-2">Smart Flashcards</h3>
             <p className="text-gray-100/90">
               Master all NEET-UG chapters using spaced-repetition flashcards with active recall technology.
@@ -48,9 +126,7 @@ export default function WhyChooseUs() {
 
           {/* Card 2 */}
           <div className="glass-card group p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-xl">
-            <div className="text-yellow-300 mb-4">
-              <FaBookOpen size={42} />
-            </div>
+            <div className="text-yellow-300 mb-4"><FaBookOpen size={42} /></div>
             <h3 className="text-2xl font-bold mb-2">Smart QBank</h3>
             <p className="text-gray-100/90">
               20,000+ curated questions with explanations. Improve accuracy & cover every high-yield topic.
@@ -59,9 +135,7 @@ export default function WhyChooseUs() {
 
           {/* Card 3 */}
           <div className="glass-card group p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-xl">
-            <div className="text-yellow-300 mb-4">
-              <FaChartLine size={42} />
-            </div>
+            <div className="text-yellow-300 mb-4"><FaChartLine size={42} /></div>
             <h3 className="text-2xl font-bold mb-2">Test Score Tracking</h3>
             <p className="text-gray-100/90">
               Track minor/major tests, accuracy, weak topics & growth graph with AI-powered insights.
@@ -86,6 +160,19 @@ export default function WhyChooseUs() {
         </div>
 
       </div>
+
+      {/* Inject SEO JSON-LD Schemas */}
+      <Script
+        type="application/ld+json"
+        id="why-choose-us-schema"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+
+      <Script
+        type="application/ld+json"
+        id="faq-schema-why-choose-us"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
     </section>
   );
 }
