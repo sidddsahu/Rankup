@@ -23,13 +23,16 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <main>
         <Hero/>
-        <FounderSection/>
+
 
         <section className="container py-16"><Features/></section>
-        <section className="text-white"><Testimonials/></section>
-        <section className="container py-16"><Faq /></section>
+         <Cta className="" />
+
          <section className=" text-white"><WhyChooseUs/></section>
-        <Cta />
+         <FounderSection/>
+          <section className="text-white"><Testimonials/></section>
+        <section className="container py-16 "><Faq /></section>
+
         {/* <Footer /> */}
       </main>
     </>
