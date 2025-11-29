@@ -3,7 +3,7 @@ import Features from './components/Features';
 import Testimonials from './components/Testimonials';
 import Faq from './components/Faq';
 import Cta from './components/Cta';
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
 import WhyChooseUs from './components/WhyChooseUs';
 
 export const dynamic = 'force-dynamic';
@@ -21,15 +21,13 @@ export default function Page() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <main>
-        <Hero />
-        <section className="container py-16"><Features /></section>
-        <section className="text-white"><Testimonials /></section>
-
-
+        <Hero/>
+        <section className="container py-16"><Features/></section>
+        <section className="text-white"><Testimonials/></section>
         <section className="container py-16"><Faq /></section>
-         <section className=" text-white"><WhyChooseUs /></section>
+         <section className=" text-white"><WhyChooseUs/></section>
         <Cta />
-        <Footer />
+        {/* <Footer /> */}
       </main>
     </>
   );

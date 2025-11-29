@@ -1,3 +1,4 @@
+import Footer from './components/Footer';
 import Header from './components/Header';
 import './globals.css';
 
@@ -10,13 +11,25 @@ export const metadata = {
     url: 'https://www.rankupp.in',
     images: ['/og-image.png'],
   },
-  robots: 'index, follow'
+  robots: 'index, follow',
+
+  // ✅ Favicon setup (your file: favs.png)
+  icons: {
+    icon: '/favs.png',
+    shortcut: '/favs.png',
+    apple: '/favs.png',
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+
+        {/* ✅ Favicon Links (clean & correct) */}
+        <link rel="icon" type="image/png" href="/favs.png" />
+        <link rel="apple-touch-icon" href="/favs.png" />
+
         {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-X3HCWNWJB3"></script>
         <script
@@ -36,9 +49,11 @@ export default function RootLayout({ children }) {
           content="https://www.bing.com/indexnow?url=https://www.rankupp.in&key=706b52414be744fc89aebf68cd06571b"
         />
       </head>
+
       <body>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
