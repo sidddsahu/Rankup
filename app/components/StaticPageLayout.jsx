@@ -18,15 +18,17 @@ const fallbackContactContent = {
       <p><strong>Partnerships:</strong> partnerships@rankupp.in</p>
 
       <h3>📞 Phone Support</h3>
-      <p><strong>Customer Care:</strong> +91-XXXXXXXXXX</p>
-      <p><strong>Technical Help:</strong> +91-XXXXXXXXXX</p>
+      <p><strong>Mobile:</strong> +91-7389338475</p>
+
       <p><i>Available Monday to Friday, 9:00 AM - 6:00 PM IST</i></p>
 
       <h3>🏢 Office Address</h3>
-      <p>RankUp Education Pvt. Ltd.<br>
-      Tech Park, Sector 62<br>
-      Noida, Uttar Pradesh 201309<br>
-      India</p>
+      <p>RankUp Education Platform<br>
+      DR. L C CHOURASIYA KE PICHE,<br> SHANTI NAGAR COLONY, <br>SAGAR ROAD
+CHHATARPUR,
+<br>
+
+    </p>
 
       <h3>🕒 Business Hours</h3>
       <ul>

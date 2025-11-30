@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { FiPlus, FiMinus, FiThumbsUp, FiThumbsDown } from "react-icons/fi";
 import useFAQ from "/hooks/useFAQ";
+import Link from "next/link";
 
 // Simple FAQ data as fallback
 const fallbackFAQs = [
@@ -229,9 +230,11 @@ export default function Faq() {
           <p className="text-gray-600 mb-4">
             Contact our support team for more help.
           </p>
+          <a href="/contact">
           <button className="px-6 py-3 bg-[#1E3A5F] text-white rounded-lg hover:bg-[#2c4d75] transition-colors">
             Contact Support
           </button>
+          </a>
         </div>
       </div>
     </section>
