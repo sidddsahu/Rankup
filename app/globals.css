@@ -39,3 +39,70 @@ body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Rob
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* Line clamp utilities */
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* Custom prose styles for blog content */
+.prose {
+  max-width: none;
+}
+
+.prose h2 {
+  @apply text-2xl font-bold text-[#1F3B57] mt-8 mb-4;
+}
+
+.prose h3 {
+  @apply text-xl font-bold text-[#1F3B57] mt-6 mb-3;
+}
+
+.prose p {
+  @apply text-gray-700 mb-4 leading-relaxed;
+}
+
+.prose ul, .prose ol {
+  @apply text-gray-700 mb-4;
+}
+
+.prose li {
+  @apply mb-2;
+}
+
+.prose strong {
+  @apply text-[#1F3B57] font-bold;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-[#1F3B57] bg-gray-50 px-4 py-2 my-4 italic;
+}
+
+/* Smooth transitions */
+* {
+  transition: all 0.3s ease;
+}

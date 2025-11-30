@@ -1,6 +1,10 @@
+import ReduxProvider from '../providers/ReduxProvider';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import './globals.css';
+import { Inter } from 'next/font/google';
+
+
 
 export const metadata = {
   title: 'RankUp — NEET-UG Preparation App',
@@ -20,6 +24,8 @@ export const metadata = {
     apple: '/favs.png',
   },
 };
+
+const inter = Inter({ subsets: ['latin'] });
 
 export default function RootLayout({ children }) {
   return (
@@ -50,10 +56,12 @@ export default function RootLayout({ children }) {
         />
       </head>
 
-      <body>
+      <body className={inter.className}>
+          <ReduxProvider>
         <Header />
         {children}
         <Footer />
+        </ReduxProvider>
       </body>
     </html>
   );

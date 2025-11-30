@@ -3,7 +3,6 @@ import Features from './components/Features';
 import Testimonials from './components/Testimonials';
 import Faq from './components/Faq';
 import Cta from './components/Cta';
-// import Footer from './components/Footer';
 import WhyChooseUs from './components/WhyChooseUs';
 import FounderSection from './components/FounderSection';
 
