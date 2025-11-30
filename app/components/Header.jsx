@@ -38,8 +38,8 @@ export default function Header() {
               src="/logoss.png"
               alt="Rankup Logo - Professional Ranking Platform"
               className="h-10 object-contain"
-              width={120}
-              height={40}
+              width={200}
+              height={60}
             />
           </Link>
         </div>
