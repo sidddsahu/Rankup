@@ -7,6 +7,11 @@ export const fetchBlogs = createAsyncThunk(
     const response = await fetch(
       `https://rankup-api-temp.onrender.com/api/v1/blog?limit=${limit}&offset=${offset}`
     );
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch blogs: ${response.status}`);
+    }
+
     const data = await response.json();
     return data;
   }
@@ -15,16 +20,36 @@ export const fetchBlogs = createAsyncThunk(
 // Async thunk to fetch single blog by slug
 export const fetchBlogBySlug = createAsyncThunk(
   'blog/fetchBlogBySlug',
-  async (slug) => {
-    const response = await fetch(
-      `https://rankup-api-temp.onrender.com/api/v1/blog?slug=${slug}`
-    );
-    const data = await response.json();
+  async (slug, { rejectWithValue }) => {
+    try {
+      console.log(`[API] Fetching blog with slug: ${slug}`);
 
-    if (data.status && data.data && data.data.length > 0) {
-      return data.data[0]; // Return the first matching blog
-    } else {
-      throw new Error('Blog not found');
+      const response = await fetch(
+        `https://rankup-api-temp.onrender.com/api/v1/blog?slug=${slug}`
+      );
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log('[API] Response received:', data);
+
+      // Handle different response formats
+      if (data.data && Array.isArray(data.data) && data.data.length > 0) {
+        return data.data[0];
+      } else if (data.data && !Array.isArray(data.data)) {
+        return data.data;
+      } else if (Array.isArray(data) && data.length > 0) {
+        return data[0];
+      } else if (data && data.id) {
+        return data;
+      } else {
+        return rejectWithValue('Blog not found');
+      }
+    } catch (error) {
+      console.error('[API] Error fetching blog:', error);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -41,6 +66,7 @@ const blogSlice = createSlice({
     total: 0,
     limit: 10,
     offset: 0,
+    currentSlug: null,
   },
   reducers: {
     clearError: (state) => {
@@ -49,7 +75,17 @@ const blogSlice = createSlice({
     },
     clearCurrentBlog: (state) => {
       state.currentBlog = null;
+      state.currentSlug = null;
+      state.loadingSingle = false;
+      state.errorSingle = null;
     },
+    // This is the action you need to use
+    resetCurrentBlog: (state) => {
+      state.currentBlog = null;
+      state.currentSlug = null;
+      state.loadingSingle = false;
+      state.errorSingle = null;
+    }
   },
   extraReducers: (builder) => {
     builder
@@ -60,10 +96,10 @@ const blogSlice = createSlice({
       })
       .addCase(fetchBlogs.fulfilled, (state, action) => {
         state.loading = false;
-        state.blogs = action.payload.data;
-        state.total = action.payload.total;
-        state.limit = action.payload.limit;
-        state.offset = action.payload.offset;
+        state.blogs = action.payload.data || [];
+        state.total = action.payload.total || 0;
+        state.limit = action.payload.limit || 10;
+        state.offset = action.payload.offset || 0;
       })
       .addCase(fetchBlogs.rejected, (state, action) => {
         state.loading = false;
@@ -77,13 +113,18 @@ const blogSlice = createSlice({
       .addCase(fetchBlogBySlug.fulfilled, (state, action) => {
         state.loadingSingle = false;
         state.currentBlog = action.payload;
+        state.currentSlug = action.meta.arg;
+        console.log('[Redux] Blog set:', action.payload?.title);
       })
       .addCase(fetchBlogBySlug.rejected, (state, action) => {
         state.loadingSingle = false;
-        state.errorSingle = action.error.message;
+        state.errorSingle = action.payload;
+        state.currentBlog = null;
+        state.currentSlug = null;
       });
   },
 });
 
-export const { clearError, clearCurrentBlog } = blogSlice.actions;
+// Make sure all actions are exported
+export const { clearError, clearCurrentBlog, resetCurrentBlog } = blogSlice.actions;
 export default blogSlice.reducer;
