@@ -13,9 +13,9 @@ const fallbackContactContent = {
       <p>We're here to help you with any questions about our NEET-UG preparation platform. Reach out to us through any of the following channels:</p>
 
       <h3>📧 Email Support</h3>
-      // <p><strong>General Inquiries:</strong> info@rankupp.in</p>
+
       <p><strong>Technical Support:</strong> support@rankupp.in</p>
-      // <p><strong>Partnerships:</strong> partnerships@rankupp.in</p>
+     
 
       <h3>📞 Phone Support</h3>
       <p><strong>Mobile:</strong> +91-7389338475</p>

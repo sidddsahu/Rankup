@@ -53,7 +53,7 @@ export default function FounderSection() {
 
   <header>
     <h1 className="text-4xl font-bold text-gray-900 leading-tight">
-      Meet Our Founder — <span className="text-blue-700">Your Guide to Success</span>
+      Meet Our Founder — <span className="text-4xl font-extrabold leading-snug drop-shadow-sm text-[#1E3A5F]">Your Guide to Success</span>
     </h1>
   </header>
 
@@ -149,7 +149,7 @@ export default function FounderSection() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="mt-12 bg-white p-6 shadow-lg rounded-2xl border-l-4 border-green-500"
+              className="mt-12 bg-white p-6 shadow-lg rounded-2xl border-l-4 border-[#1E3A5F]"
               role="article"
               aria-label="Learning Philosophy"
             >
@@ -172,7 +172,7 @@ export default function FounderSection() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="bg-white p-6 shadow-lg rounded-2xl border-l-4 border-blue-600"
+              className="bg-white p-6 shadow-lg rounded-2xl border-l-4 border-[#1E3A5F]"
               role="article"
               aria-label="Success Roadmap"
             >
@@ -199,7 +199,7 @@ export default function FounderSection() {
 
   <header>
     <h1 className="text-4xl font-bold text-gray-900 leading-tight">
-      Meet Our Founder — <span className="text-blue-700">Your Guide to Success</span>
+      Meet Our Founder — <span className="text-4xl font-extrabold leading-snug drop-shadow-sm text-[#1E3A5F]">Your Guide to Success</span>
     </h1>
   </header>
 
@@ -258,7 +258,7 @@ export default function FounderSection() {
               <div className="mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <a
                   href="#join"
-                  className="inline-flex items-center gap-3 bg-blue-700 text-white font-semibold px-5 py-3 rounded-xl shadow hover:shadow-lg transition focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  className="inline-flex items-center gap-3 bg-[#1E3A5F] text-white font-semibold px-5 py-3 rounded-xl shadow hover:shadow-lg transition focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                   aria-label="Start your success journey with RankUp medical coaching"
                 >
                   <FaBookOpen aria-hidden="true" />
@@ -275,7 +275,7 @@ export default function FounderSection() {
 
             {/* Trust Section */}
             <section aria-labelledby="trust-heading">
-              <div className="mt-8 bg-white p-6 shadow-xl rounded-2xl border-l-4 border-purple-500">
+              <div className="mt-8 bg-white p-6 shadow-xl rounded-2xl border-l-4 border-[#1E3A5F]">
                 <h2 id="trust-heading" className="text-2xl font-bold text-gray-900 mb-2">Why Trust My Guidance?</h2>
                 <p className="text-gray-700 leading-relaxed text-base">
                   I've walked the path you're on right now. From classroom learning to competitive exams,
@@ -339,7 +339,7 @@ function RoadmapStep({ number, title, desc }) {
   return (
     <article className="flex gap-4 items-start bg-gray-50 p-3 rounded-lg">
       <div
-        className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-700 text-white font-bold"
+        className="flex items-center justify-center w-10 h-10 rounded-full bg-[#1E3A5F] text-white font-bold"
         aria-hidden="true"
       >
         {number}

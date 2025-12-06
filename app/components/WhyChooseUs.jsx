@@ -104,7 +104,7 @@ export default function WhyChooseUs() {
         {/* Heading */}
         <div className="text-center max-w-3xl mx-auto mb-14">
           <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
-            Why Choose <span className="text-yellow-300">RankUp</span> for NEET-UG?
+            Why Choose <span className="text-[#000]">RankUp</span> for NEET-UG?
           </h2>
           <p className="mt-4 text-lg text-gray-100/90">
             Backed by research: spaced repetition + active recall boost memory retention
@@ -117,7 +117,7 @@ export default function WhyChooseUs() {
 
           {/* Card 1 */}
           <div className="glass-card group p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-xl">
-            <div className="text-yellow-300 mb-4"><FaBrain size={42} /></div>
+            <div className="text-[#000] mb-4"><FaBrain size={42} /></div>
             <h3 className="text-2xl font-bold mb-2">Smart Flashcards</h3>
             <p className="text-gray-100/90">
               Master all NEET-UG chapters using spaced-repetition flashcards with active recall technology.
@@ -126,7 +126,7 @@ export default function WhyChooseUs() {
 
           {/* Card 2 */}
           <div className="glass-card group p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-xl">
-            <div className="text-yellow-300 mb-4"><FaBookOpen size={42} /></div>
+            <div className="text-[#000] mb-4"><FaBookOpen size={42} /></div>
             <h3 className="text-2xl font-bold mb-2">Smart QBank</h3>
             <p className="text-gray-100/90">
               20,000+ curated questions with explanations. Improve accuracy & cover every high-yield topic.
@@ -135,7 +135,7 @@ export default function WhyChooseUs() {
 
           {/* Card 3 */}
           <div className="glass-card group p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-xl">
-            <div className="text-yellow-300 mb-4"><FaChartLine size={42} /></div>
+            <div className="text-[#000] mb-4"><FaChartLine size={42} /></div>
             <h3 className="text-2xl font-bold mb-2">Test Score Tracking</h3>
             <p className="text-gray-100/90">
               Track minor/major tests, accuracy, weak topics & growth graph with AI-powered insights.
@@ -146,14 +146,14 @@ export default function WhyChooseUs() {
 
         {/* Additional Explanation Box */}
         <div className="mt-16 p-8 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-lg shadow-lg max-w-4xl mx-auto">
-          <h3 className="text-3xl font-bold text-yellow-300 mb-4">
+          <h3 className="text-3xl font-bold text-[#000] mb-4">
             Backed by Science
           </h3>
           <p className="text-gray-100 leading-relaxed">
             Research from early 20th-century cognitive science shows that
-            <span className="font-semibold text-yellow-200"> spaced repetition </span>
+            <span className="font-semibold text-black"> spaced repetition </span>
             and
-            <span className="font-semibold text-yellow-200"> active recall </span>
+            <span className="font-semibold text-black"> active recall </span>
             dramatically improve memory retention.
             RankUp uses these proven frameworks so NEET-UG students learn smarter — not harder.
           </p>
