@@ -49,6 +49,61 @@ export default function FounderSection() {
           {/* Left Side — Images and Additional Content */}
           <div className="space-y-8">
             {/* Images Grid with SEO optimized alt texts */}
+            <div className="block md:hidden">
+
+  <header>
+    <h1 className="text-4xl font-bold text-gray-900 leading-tight">
+      Meet Our Founder — <span className="text-blue-700">Your Guide to Success</span>
+    </h1>
+  </header>
+
+  <p className="text-gray-700 text-lg leading-relaxed">
+    My journey started with a simple dream - to excel in medicine and help others do the same.
+    After winning the <strong className="font-semibold">Gold Medal in Class 12th</strong>, I pursued MBBS at
+    <strong className="font-semibold"> Shyam Shah Medical College, Rewa</strong> where I continued my
+    academic excellence by earning another <strong className="font-semibold">Gold Medal</strong>.
+    Right after MBBS, I cracked <strong className="font-semibold">NEET PG with All India Rank 1731</strong>
+    and also qualified the <strong className="font-semibold">UPSC Combined Medical Services</strong> exam.
+  </p>
+
+
+    <section aria-labelledby="achievements-heading">
+              <h2 id="achievements-heading" className="sr-only">Academic and Professional Achievements</h2>
+              <div className="space-y-4">
+                <Achievement
+                  icon={<FaStar className="text-yellow-500 text-2xl" aria-hidden="true" />}
+                  title="Class 12th Gold Medalist"
+                  desc="Secured top position in school with outstanding scores in Science subjects"
+                />
+
+                <Achievement
+                  icon={<FaMedal className="text-red-500 text-2xl" aria-hidden="true" />}
+                  title="MBBS Gold Medalist"
+                  desc="Awarded gold medal for academic excellence throughout medical college"
+                />
+
+                <Achievement
+                  icon={<FaTrophy className="text-blue-600 text-2xl" aria-hidden="true" />}
+                  title="NEET PG AIR 1731"
+                  desc="Achieved excellent national rank right after completing MBBS"
+                />
+
+                <Achievement
+                  icon={<FaGratipay className="text-pink-600 text-2xl" aria-hidden="true" />}
+                  title="UPSC CMS Qualified"
+                  desc="Cleared the prestigious Combined Medical Services examination"
+                />
+
+                <Achievement
+                  icon={<FaHeartbeat className="text-indigo-600 text-2xl" aria-hidden="true" />}
+                  title="Rank 41 in Madhya Pradesh"
+                  desc="Among the top rankers from the state in NEET PG"
+                />
+              </div>
+            </section>
+
+</div>
+
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -59,25 +114,25 @@ export default function FounderSection() {
                 <img
                   src="/goldmedalce.jpg"
                   alt="NEET PG Rank 1731 Certificate - RankUp Medical Education"
-                  className="rounded-3xl shadow-xl border-4 border-white object-cover w-full h-56"
+                  className="rounded-3xl shadow-xl border-4 border-white object-cover md:h-56 md:w-full h-full"
                   loading="lazy"
                 />
                 <img
                   src="/medal.jpg"
                   alt="MBBS Gold Medal Achievement - Medical College Excellence"
-                  className="rounded-3xl shadow-xl border-4 border-white object-cover w-full h-56"
+                  className="rounded-3xl shadow-xl border-4 border-white object-cover md:h-56 md:w-full h-full"
                   loading="lazy"
                 />
                 <img
                   src="mbbs.jpg"
                   alt="Medical College Founder Portrait - RankUp Medical Mentor"
-                  className="rounded-3xl shadow-xl border-4 border-white object-cover w-full h-56"
+                  className="rounded-3xl shadow-xl border-4 border-white object-cover md:h-56 md:w-full h-full"
                   loading="lazy"
                 />
                 <img
-                  src="mbbs done.jpg"
+                  src="upsc.jpg"
                   alt="Class 12th Gold Medal Certificate - Academic Excellence"
-                  className="rounded-3xl shadow-xl border-4 border-white object-cover w-full h-56"
+                  className="rounded-3xl shadow-xl border-4 border-white object-cover md:h-56 md:w-full h-full"
                   loading="lazy"
                 />
               </div>
@@ -140,23 +195,24 @@ export default function FounderSection() {
             className="space-y-6"
           >
             {/* Main Heading with proper hierarchy */}
-            <header>
-              <h1 className="text-4xl font-bold text-gray-900 leading-tight">
-                Meet Our Founder — <span className="text-blue-700">Your Guide to Success</span>
-              </h1>
-            </header>
+<div className="hidden md:block">
 
-            <p className="text-gray-700 text-lg leading-relaxed">
-              My journey started with a simple dream - to excel in medicine and help others do the same.
-              After winning the <strong className="font-semibold">Gold Medal in Class 12th</strong>, I pursued MBBS at
-              <strong className="font-semibold"> Shyam Shah Medical College, Rewa</strong> where I continued my
-              academic excellence by earning another <strong className="font-semibold">Gold Medal</strong>.
-              Right after MBBS, I cracked <strong className="font-semibold">NEET PG with All India Rank 1731</strong>
-              and also qualified the <strong className="font-semibold">UPSC Combined Medical Services</strong> exam.
-            </p>
+  <header>
+    <h1 className="text-4xl font-bold text-gray-900 leading-tight">
+      Meet Our Founder — <span className="text-blue-700">Your Guide to Success</span>
+    </h1>
+  </header>
 
-            {/* Achievements List with semantic structure */}
-            <section aria-labelledby="achievements-heading">
+  <p className="text-gray-700 text-lg leading-relaxed">
+    My journey started with a simple dream - to excel in medicine and help others do the same.
+    After winning the <strong className="font-semibold">Gold Medal in Class 12th</strong>, I pursued MBBS at
+    <strong className="font-semibold"> Shyam Shah Medical College, Rewa</strong> where I continued my
+    academic excellence by earning another <strong className="font-semibold">Gold Medal</strong>.
+    Right after MBBS, I cracked <strong className="font-semibold">NEET PG with All India Rank 1731</strong>
+    and also qualified the <strong className="font-semibold">UPSC Combined Medical Services</strong> exam.
+  </p>
+
+    <section aria-labelledby="achievements-heading">
               <h2 id="achievements-heading" className="sr-only">Academic and Professional Achievements</h2>
               <div className="space-y-4">
                 <Achievement
@@ -190,6 +246,11 @@ export default function FounderSection() {
                 />
               </div>
             </section>
+
+</div>
+
+            {/* Achievements List with semantic structure */}
+
 
             {/* CTA Section with proper button semantics */}
             <section aria-labelledby="cta-heading">
