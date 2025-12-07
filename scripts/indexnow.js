@@ -1,10 +1,6 @@
-/**
- * Simple IndexNow ping script.
- * Replace DOMAIN and KEY before using.
- */
 
 const https = require('https');
-const domain = 'https://yourdomain.com';
+const domain = 'https://www.rankupp.in';
 const key = 'REPLACE_WITH_KEY';
 
 const url = `https://www.bing.com/indexnow?url=${domain}&key=${key}`;

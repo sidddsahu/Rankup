@@ -1,250 +1,581 @@
 "use client";
 
-import { motion } from "framer-motion";
-import {
-  FaMedal,
-  FaTrophy,
-  FaUserMd,
-  FaStar,
-  FaHeartbeat,
-  FaGratipay,
-  FaBookOpen,
-  FaArrowRight,
-} from "react-icons/fa";
+import { useEffect, useState, useCallback, useMemo } from 'react';
+import { useStaticPages } from '/hooks/useStaticPages';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import Script from 'next/script';
 
-export default function FounderSection() {
-  return (
-    <section className="w-full bg-gradient-to-b from-white to-blue-50 py-20 px-6">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
+// Fallback content for contact page agar API mein na ho
+const fallbackContactContent = {
+  contact: {
+    title: "Contact Us - RankUp NEET-UG Preparation Platform",
+    content: `
+      <h1>Get in Touch with RankUp</h1>
+      <p>We're here to help you with any questions about our NEET-UG preparation platform. Reach out to us through any of the following channels:</p>
 
-        {/* Left Side — Images Grid */}
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
-          className="relative"
-        >
-          <div className="grid grid-cols-2 gap-4">
-            <img
-              src="/founder-main.jpg"
-              alt="Founder portrait"
-              className="rounded-3xl shadow-xl border-4 border-white object-cover w-full h-56"
-            />
-            <img
-              src="/gold-12th.jpg"
-              alt="12th gold medal"
-              className="rounded-3xl shadow-xl border-4 border-white object-cover w-full h-56"
-            />
-            <img
-              src="/gold-mbbs.jpg"
-              alt="MBBS gold medal"
-              className="rounded-3xl shadow-xl border-4 border-white object-cover w-full h-56"
-            />
-            <img
-              src="/neetpg-1731.jpg"
-              alt="NEET PG rank certificate"
-              className="rounded-3xl shadow-xl border-4 border-white object-cover w-full h-56"
-            />
-          </div>
+      <h2>Email Support</h2>
+      <p><strong>Technical Support:</strong> <a href="mailto:support@rankupp.in" aria-label="Email technical support">support@rankupp.in</a></p>
 
-          {/* Floating Badge */}
-          <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-white shadow-lg rounded-2xl px-6 py-3 flex items-center gap-3 whitespace-nowrap">
-            <FaUserMd className="text-blue-600 text-2xl" />
-            <p className="font-semibold text-gray-700 text-lg">MBBS Gold Medalist | NEET PG AIR 1731</p>
-          </div>
-        </motion.div>
+      <h2>Phone Support</h2>
+      <p><strong>Mobile:</strong> <a href="tel:+917389338475" aria-label="Call RankUp support">+91-7389338475</a></p>
+      <p><em>Available Monday to Friday, 9:00 AM - 6:00 PM IST</em></p>
 
-        {/* Right Side — Content */}
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
-          className="space-y-6"
-        >
-          <h2 className="text-4xl font-bold text-gray-900 leading-tight">
-            Meet Our Founder — <span className="text-blue-700">Your RankUp Mentor</span>
-          </h2>
+      <h2>Office Address</h2>
+      <address>
+        RankUp Education Platform<br>
+        DR. L C CHOURASIYA KE PICHE,<br>
+        SHANTI NAGAR COLONY, <br>
+        SAGAR ROAD CHHATARPUR,<br>
+        Madhya Pradesh, India
+      </address>
 
-          <p className="text-gray-700 text-lg leading-relaxed">
-            Hi, I'm the founder of RankUp. My journey started with winning a gold medal in Class 12th.
-            Then I joined <span className="font-semibold">Shyam Shah Medical College, Rewa</span> for MBBS,
-            where I worked hard and earned another <span className="font-semibold">Gold Medal</span> for
-            being the top performer. Right after finishing MBBS, I cleared <span className="font-semibold">NEET PG
-            with AIR 1731</span> and also qualified the <span className="font-semibold">UPSC Combined Medical
-            Services (CMS)</span> exam. This journey taught me what really works when it comes to
-            competitive exams, and now I want to help you do the same.
-          </p>
+      <h2>Business Hours</h2>
+      <ul>
+        <li><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM</li>
+        <li><strong>Saturday:</strong> 10:00 AM - 4:00 PM</li>
+        <li><strong>Sunday:</strong> Closed</li>
+      </ul>
 
-          {/* Achievements List */}
-          <div className="space-y-4">
-            <Achievement
-              icon={<FaStar className="text-yellow-500 text-2xl" />}
-              title="Gold Medal in Class 12th"
-              desc="Scored Physics 95, Chemistry 90, Biology 85. Also won the inter-school Quick Quiz competition."
-            />
-
-            <Achievement
-              icon={<FaMedal className="text-red-500 text-2xl" />}
-              title="MBBS Gold Medal (SSMC, Rewa)"
-              desc="Top performer in MBBS. This was possible because of consistent daily study and smart revision techniques."
-            />
-
-            <Achievement
-              icon={<FaTrophy className="text-blue-600 text-2xl" />}
-              title="NEET PG — All India Rank 1731"
-              desc="Cleared NEET PG right after completing MBBS. Focused preparation and regular mock tests made this possible."
-            />
-
-            <Achievement
-              icon={<FaGratipay className="text-pink-600 text-2xl" />}
-              title="UPSC (CMS) Qualified"
-              desc="Cleared the UPSC Combined Medical Services exam alongside NEET PG preparation."
-            />
-
-            <Achievement
-              icon={<FaHeartbeat className="text-indigo-600 text-2xl" />}
-              title="Rank 41 in Madhya Pradesh"
-              desc="One of the top scorers in MP for NEET PG. Proof that state-level excellence is achievable with the right strategy."
-            />
-          </div>
-
-          {/* How I Did It Box */}
-          <div className="mt-6 bg-white p-6 shadow-lg rounded-2xl border-l-4 border-blue-600">
-            <h3 className="text-2xl font-bold text-gray-900 mb-3">How I Achieved All This</h3>
-            <div className="grid gap-3">
-              <RoadmapStep
-                number={1}
-                title="Strong Foundation (Class 12)"
-                desc="I focused on understanding concepts deeply, not just memorizing. Daily practice and revision became my habit."
-              />
-              <RoadmapStep
-                number={2}
-                title="Consistent Study During MBBS"
-                desc="I studied every single day. Made notes, practiced questions, and never skipped revision. This helped me win the gold medal."
-              />
-              <RoadmapStep
-                number={3}
-                title="Smart NEET PG Preparation"
-                desc="Created a proper study schedule, focused on high-yield topics, gave regular mock tests, and analyzed my mistakes."
-              />
-              <RoadmapStep
-                number={4}
-                title="Time Management & Discipline"
-                desc="The secret? Simple. Show up every day. Even when you don't feel like it. Consistency beats talent."
-              />
-              <RoadmapStep
-                number={5}
-                title="Learn from Mistakes"
-                desc="Every test, every mistake taught me something. I kept improving my strategy based on what worked and what didn't."
-              />
-            </div>
-          </div>
-
-          {/* CTA Button */}
-          <div className="mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-            <a
-              href="#join"
-              className="inline-flex items-center gap-3 bg-blue-700 text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:bg-blue-800 hover:shadow-xl transition"
-            >
-              <FaBookOpen /> Join RankUp Today <FaArrowRight />
-            </a>
-            <p className="text-gray-600 text-sm">
-              Want my exact study schedule and the strategy I used? Join RankUp and get everything inside.
-            </p>
-          </div>
-
-          {/* Summary Box */}
-          <div className="mt-8 bg-gradient-to-r from-green-50 to-blue-50 p-6 shadow-xl rounded-2xl border-l-4 border-green-500">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">Why RankUp?</h3>
-            <p className="text-gray-700 leading-relaxed text-base">
-              I've walked the path you're on right now. From gold medals to clearing NEET PG and UPSC,
-              I know what works and what doesn't. RankUp isn't just another coaching program — it's
-              the exact system I used, broken down into simple steps anyone can follow. If I can do it,
-              so can you. Let me show you how.
-            </p>
-          </div>
-        </motion.div>
+      <div class="bg-blue-50 p-4 rounded-lg mt-6">
+        <h3 class="text-blue-800 font-semibold">Quick Response Guarantee</h3>
+        <p class="text-blue-700">We respond to all emails within 24 hours and urgent queries within 4 hours during business days.</p>
       </div>
+    `,
+    metaTitle: "Contact Us - RankUp NEET-UG Preparation Platform | Support & Assistance",
+    metaDesc: "Contact RankUp for NEET-UG preparation support. Get technical help, billing assistance, and partnership opportunities. Email: support@rankupp.in, Phone: +91-7389338475.",
+    canonicalUrl: "/contact",
+    openGraph: {
+      title: "Contact RankUp NEET-UG Preparation Support",
+      description: "Reach out to RankUp for expert NEET-UG preparation assistance and support",
+      type: "website",
+      url: "/contact",
+      siteName: "RankUp NEET-UG Preparation"
+    }
+  }
+};
 
-      {/* Certificates Grid */}
-      <div className="max-w-6xl mx-auto mt-16">
-        <h4 className="text-3xl font-bold text-gray-900 mb-6 text-center">Awards & Certificates</h4>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <CertificateCard
-            img="/cert-12th.jpg"
-            title="Class 12th Gold Medal"
-            subtitle="Academic Excellence"
-          />
-          <CertificateCard
-            img="/cert-mbbs.jpg"
-            title="MBBS Gold Medal"
-            subtitle="SSMC Rewa — Top Performer"
-          />
-          <CertificateCard
-            img="/cert-neetpg.jpg"
-            title="NEET PG — AIR 1731"
-            subtitle="All India Rank"
-          />
-          <CertificateCard
-            img="/cert-cms.jpg"
-            title="UPSC CMS Qualified"
-            subtitle="Combined Medical Services"
-          />
-          <CertificateCard
-            img="/cert-quiz.jpg"
-            title="Quick Quiz Champion"
-            subtitle="Inter-School Competition"
-          />
-          <CertificateCard
-            img="/cert-achieve.jpg"
-            title="Consistent High Scores"
-            subtitle="Physics 95 | Chemistry 90 | Biology 85"
-          />
+// JSON-LD Schema for Contact Page
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "RankUp NEET-UG Preparation Platform",
+  "url": "https://rankupp.in",
+  "logo": "https://rankupp.in/logo.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+91-7389338475",
+    "contactType": "customer service",
+    "areaServed": "IN",
+    "availableLanguage": ["English", "Hindi"]
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "DR. L C CHOURASIYA KE PICHE, SHANTI NAGAR COLONY, SAGAR ROAD",
+    "addressLocality": "Chhatarpur",
+    "addressRegion": "Madhya Pradesh",
+    "postalCode": "471001",
+    "addressCountry": "IN"
+  },
+  "sameAs": [
+    "https://facebook.com/rankup",
+    "https://twitter.com/rankup",
+    "https://linkedin.com/company/rankup"
+  ]
+};
+
+export default function StaticPageLayout({ slug, pageTitle }) {
+  const router = useRouter();
+  const { currentPage, loading, error, getStaticPage, clearCurrentPage } = useStaticPages();
+  const [mounted, setMounted] = useState(false);
+
+  // Use useCallback for stable function references
+  const handleGetStaticPage = useCallback(() => {
+    getStaticPage(slug);
+  }, [getStaticPage, slug]);
+
+  const handleClearCurrentPage = useCallback(() => {
+    clearCurrentPage();
+  }, [clearCurrentPage]);
+
+  useEffect(() => {
+    setMounted(true);
+    handleGetStaticPage();
+
+    return () => {
+      handleClearCurrentPage();
+    };
+  }, [slug, handleGetStaticPage, handleClearCurrentPage]);
+
+  // Determine which content to display
+  const displayPage = useMemo(() => {
+    if (error && slug === 'contact') {
+      return fallbackContactContent.contact;
+    }
+    return currentPage;
+  }, [error, slug, currentPage]);
+
+  // Get full canonical URL
+  const getCanonicalUrl = useMemo(() => {
+    const baseUrl = 'https://rankupp.in';
+    const path = displayPage?.canonicalUrl || `/${slug}`;
+    return `${baseUrl}${path}`;
+  }, [slug, displayPage]);
+
+  // Generate structured breadcrumb data
+  const breadcrumbSchema = useMemo(() => ({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://rankupp.in"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": pageTitle,
+        "item": getCanonicalUrl
+      }
+    ]
+  }), [pageTitle, getCanonicalUrl]);
+
+  // Function to clean and format HTML content with semantic improvements
+  const formatContent = useCallback((content) => {
+    if (!content) return '';
+
+    let formattedContent = content
+      .replace(/<p>&lt;(.*?)&gt;/g, '<$1>')
+      .replace(/&lt;\/(.*?)&gt;<\/p>/g, '</$1>')
+      .replace(/&lt;(.*?)&gt;/g, '<$1>')
+      .replace(/&amp;/g, '&')
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'");
+
+    // Add semantic improvements
+    formattedContent = formattedContent
+      .replace(/<h1>/g, '<h1 itemprop="headline">')
+      .replace(/<p>/g, '<p itemprop="text">')
+      .replace(/<img/g, '<img loading="lazy"')
+      .replace(/<a href=/g, '<a rel="noopener noreferrer" href=');
+
+    return formattedContent;
+  }, []);
+
+  // Get appropriate icon and structured data for each page
+  const getPageMetaData = useCallback(() => {
+    const metaData = {
+      terms: {
+        icon: '📝',
+        schemaType: 'Legislation',
+        description: 'Terms and Conditions for RankUp NEET-UG Preparation Platform'
+      },
+      privacy: {
+        icon: '🔒',
+        schemaType: 'PrivacyPolicy',
+        description: 'Privacy Policy for RankUp NEET-UG student data protection'
+      },
+      about: {
+        icon: '🏢',
+        schemaType: 'AboutPage',
+        description: 'About RankUp - Leading NEET-UG Preparation Platform'
+      },
+      refund: {
+        icon: '💳',
+        schemaType: 'Offer',
+        description: 'Refund Policy for RankUp NEET-UG courses and subscriptions'
+      },
+      contact: {
+        icon: '📞',
+        schemaType: 'ContactPage',
+        description: 'Contact RankUp for NEET-UG preparation support'
+      }
+    };
+    return metaData[slug] || { icon: '📄', schemaType: 'WebPage', description: pageTitle };
+  }, [slug, pageTitle]);
+
+  const pageMeta = getPageMetaData();
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#1E3A5F] mx-auto"
+                 role="status"
+                 aria-label="Loading">
+              <span className="sr-only">Loading {pageTitle}...</span>
+            </div>
+            <p className="text-gray-600 mt-4">Loading {pageTitle}...</p>
+          </div>
         </div>
       </div>
+    );
+  }
 
-    </section>
-  );
-}
-
-function Achievement({ icon, title, desc }) {
-  return (
-    <div className="flex gap-4 items-start">
-      <div className="p-3 bg-white rounded-xl shadow-md">{icon}</div>
-      <div>
-        <h4 className="font-semibold text-lg text-gray-900">{title}</h4>
-        <p className="text-gray-600 text-sm leading-relaxed">{desc}</p>
+  if (error && slug !== 'contact') {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
+        <div className="container mx-auto px-4 max-w-4xl text-center">
+          <div className="bg-white rounded-2xl shadow-lg p-8">
+            <h1 className="text-3xl font-bold text-[#1E3A5F] mb-4">{pageTitle}</h1>
+            <div className="text-red-600 bg-red-50 p-6 rounded-lg" role="alert">
+              <p className="text-lg mb-4">Error loading page: {error}</p>
+              <button
+                onClick={handleGetStaticPage}
+                className="px-6 py-2 bg-[#1E3A5F] text-white rounded-lg hover:bg-[#2c4d75] transition-colors focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:ring-offset-2"
+                aria-label="Try loading page again"
+              >
+                Try Again
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
 
-function RoadmapStep({ number, title, desc }) {
-  return (
-    <div className="flex gap-4 items-start bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition">
-      <div className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-700 text-white font-bold flex-shrink-0">
-        {number}
-      </div>
-      <div>
-        <div className="font-semibold text-gray-900 mb-1">{title}</div>
-        <div className="text-sm text-gray-600 leading-relaxed">{desc}</div>
-      </div>
-    </div>
-  );
-}
+  // Generate meta keywords based on page content
+  const generateMetaKeywords = useMemo(() => {
+    const baseKeywords = ['RankUp', 'NEET-UG', 'Medical Entrance', 'Preparation', 'MBBS'];
+    const pageSpecific = {
+      terms: ['Terms', 'Conditions', 'Agreement', 'Legal'],
+      privacy: ['Privacy', 'Data Protection', 'Security', 'GDPR'],
+      about: ['About Us', 'Company', 'Mission', 'Vision'],
+      refund: ['Refund', 'Cancellation', 'Money Back', 'Policy'],
+      contact: ['Contact', 'Support', 'Help', 'Customer Service']
+    };
 
-function CertificateCard({ img, title, subtitle }) {
+    return [...baseKeywords, ...(pageSpecific[slug] || []), pageTitle].join(', ');
+  }, [slug, pageTitle]);
+
   return (
-    <div className="bg-white p-5 rounded-2xl shadow-md hover:shadow-xl transition flex gap-4 items-center">
-      <img
-        src={img}
-        alt={title}
-        className="w-20 h-20 object-cover rounded-lg border-2 border-gray-200"
+    <>
+      <Head>
+        {/* Primary Meta Tags */}
+        <title itemProp="name">{displayPage?.metaTitle || `${pageTitle} - RankUp NEET-UG Preparation`}</title>
+        <meta
+          name="description"
+          content={displayPage?.metaDesc || `Read our ${pageTitle} for RankUp NEET-UG preparation platform. ${pageMeta.description}`}
+          itemProp="description"
+        />
+
+        {/* Keywords */}
+        <meta name="keywords" content={generateMetaKeywords} />
+
+        {/* Canonical URL */}
+        <link rel="canonical" href={getCanonicalUrl} />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={getCanonicalUrl} />
+        <meta
+          property="og:title"
+          content={displayPage?.openGraph?.title || displayPage?.metaTitle || `${pageTitle} - RankUp NEET-UG`}
+        />
+        <meta
+          property="og:description"
+          content={displayPage?.openGraph?.description || displayPage?.metaDesc || `RankUp NEET-UG ${pageTitle}`}
+        />
+        <meta property="og:site_name" content="RankUp NEET-UG Preparation" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:updated_time" content={displayPage?.updatedAt || new Date().toISOString()} />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@rankup" />
+        <meta name="twitter:creator" content="@rankup" />
+        <meta
+          name="twitter:title"
+          content={displayPage?.metaTitle || `${pageTitle} - RankUp NEET-UG`}
+        />
+        <meta
+          name="twitter:description"
+          content={displayPage?.metaDesc || `RankUp NEET-UG ${pageTitle}`}
+        />
+
+        {/* Additional Meta Tags */}
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="author" content="RankUp Education" />
+        <meta name="copyright" content={`Copyright © ${new Date().getFullYear()} RankUp`} />
+        <meta name="language" content="English" />
+        <meta name="revisit-after" content="7 days" />
+        <meta name="rating" content="General" />
+        <meta name="distribution" content="Global" />
+
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": pageMeta.schemaType,
+              "headline": displayPage?.title || pageTitle,
+              "description": displayPage?.metaDesc || pageMeta.description,
+              "url": getCanonicalUrl,
+              "datePublished": displayPage?.createdAt || new Date().toISOString(),
+              "dateModified": displayPage?.updatedAt || new Date().toISOString(),
+              "author": {
+                "@type": "Organization",
+                "name": "RankUp Education",
+                "url": "https://rankupp.in"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "RankUp",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://rankupp.in/logo.png",
+                  "width": 512,
+                  "height": 512
+                }
+              },
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": getCanonicalUrl
+              },
+              ...(slug === 'contact' ? contactSchema : {})
+            })
+          }}
+        />
+
+        {/* Breadcrumb Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+      </Head>
+
+      {/* Google Analytics Script */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+        strategy="afterInteractive"
       />
-      <div>
-        <div className="font-semibold text-gray-900 mb-1">{title}</div>
-        <div className="text-sm text-gray-600">{subtitle}</div>
-      </div>
-    </div>
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XXXXXXXXXX');
+        `}
+      </Script>
+
+      <main
+        className="min-h-screen mt-12 bg-gradient-to-br from-blue-50 to-indigo-100 py-12"
+        itemScope
+        itemType={`https://schema.org/${pageMeta.schemaType}`}
+      >
+        <div className="container mx-auto px-4 max-w-4xl">
+          {/* Breadcrumb Navigation */}
+          <nav aria-label="Breadcrumb" className="mb-6">
+            <ol className="flex flex-wrap items-center text-sm text-gray-600">
+              <li className="inline-flex items-center">
+                <a href="/" className="hover:text-[#1E3A5F] transition-colors" aria-label="Go to homepage">
+                  Home
+                </a>
+                <span className="mx-2">/</span>
+              </li>
+              <li className="inline-flex items-center" aria-current="page">
+                <span className="text-[#1E3A5F] font-semibold">{pageTitle}</span>
+              </li>
+            </ol>
+          </nav>
+
+          {/* Header Section */}
+          <header className="text-center mb-12">
+            <div
+              className="inline-flex items-center justify-center w-16 h-16 bg-[#1E3A5F] rounded-full mb-4"
+              aria-hidden="true"
+            >
+              <span className="text-2xl text-white font-bold">
+                {pageMeta.icon}
+              </span>
+            </div>
+            <h1
+              className="text-4xl md:text-5xl font-bold text-[#1E3A5F] mb-4"
+              itemProp="headline"
+            >
+              {displayPage?.title || pageTitle}
+            </h1>
+            {displayPage?.updatedAt && (
+              <time
+                dateTime={displayPage.updatedAt}
+                className="text-gray-600 text-lg"
+                itemProp="dateModified"
+              >
+                Last updated: {new Date(displayPage.updatedAt).toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
+                })}
+              </time>
+            )}
+          </header>
+
+          {/* Content Section */}
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+            <div className="p-8 md:p-12">
+              <article
+                className="prose prose-lg max-w-none
+                          prose-headings:text-[#1E3A5F] prose-headings:font-bold
+                          prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl
+                          prose-p:text-gray-700 prose-p:leading-relaxed
+                          prose-strong:text-[#1E3A5F] prose-strong:font-bold
+                          prose-ul:text-gray-700 prose-ol:text-gray-700
+                          prose-li:text-gray-700 prose-li:my-2
+                          prose-blockquote:border-l-[#1E3A5F] prose-blockquote:bg-blue-50
+                          prose-blockquote:px-6 prose-blockquote:py-4
+                          prose-a:text-[#1E3A5F] prose-a:underline hover:prose-a:text-[#2c4d75]
+                          prose-table:border-collapse prose-table:w-full
+                          prose-th:bg-[#1E3A5F] prose-th:text-white prose-th:p-3
+                          prose-td:border prose-td:p-3 prose-td:text-gray-700
+                          prose-img:rounded-lg prose-img:shadow-md"
+                itemProp="articleBody"
+                dangerouslySetInnerHTML={{
+                  __html: displayPage ? formatContent(displayPage.content) :
+                  `<p>Content loading...</p>`
+                }}
+              />
+            </div>
+
+            {/* Page Metadata */}
+            {displayPage?.version && (
+              <footer className="bg-gray-50 px-8 py-6 border-t">
+                <div className="flex flex-col md:flex-row justify-between items-center">
+                  <div className="text-gray-600 text-sm">
+                    <span itemProp="version">Version {displayPage?.version || '1.0'}</span>
+                    <span className="mx-2">•</span>
+                    <span itemProp="publisher">Published by {displayPage?.publishedBy || 'RankUp System'}</span>
+                  </div>
+                  <div className="mt-4 md:mt-0 flex gap-4">
+                    <span className="inline-flex items-center px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full" aria-label="Published status">
+                      ✅ Published
+                    </span>
+                    <span className="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full" aria-label="Page type">
+                      📄 {displayPage?.slug?.toUpperCase() || 'PAGE'}
+                    </span>
+                  </div>
+                </div>
+              </footer>
+            )}
+
+            {/* Fallback notice for contact page */}
+            {error && slug === 'contact' && (
+              <div className="bg-yellow-50 px-8 py-4 border-t border-yellow-200" role="note">
+                <p className="text-yellow-700 text-sm text-center">
+                  📝 Showing default contact information. For the most updated details, please check our app.
+                </p>
+              </div>
+            )}
+          </div>
+
+          {/* Additional Contact Form for Contact Page */}
+          {slug === 'contact' && (
+            <div className="mt-8 bg-white rounded-2xl shadow-xl p-8" itemScope itemType="https://schema.org/ContactPage">
+              <h2 className="text-2xl font-bold text-[#1E3A5F] mb-6 text-center">Send us a Message</h2>
+              <div className="max-w-2xl mx-auto">
+                <form
+                  className="space-y-6"
+                  action="/api/contact"
+                  method="POST"
+                  itemScope
+                  itemProp="mainEntity"
+                  itemType="https://schema.org/ContactForm"
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                        Your Name *
+                      </label>
+                      <input
+                        id="name"
+                        name="name"
+                        type="text"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1E3A5F] focus:border-transparent transition-all"
+                        placeholder="Enter your name"
+                        required
+                        aria-required="true"
+                        itemProp="name"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                        Email Address *
+                      </label>
+                      <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1E3A5F] focus:border-transparent transition-all"
+                        placeholder="Enter your email"
+                        required
+                        aria-required="true"
+                        itemProp="email"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                      Subject *
+                    </label>
+                    <select
+                      id="subject"
+                      name="subject"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1E3A5F] focus:border-transparent transition-all"
+                      required
+                      aria-required="true"
+                      itemProp="description"
+                    >
+                      <option value="">Select a subject</option>
+                      <option value="Technical Support">Technical Support</option>
+                      <option value="Billing Inquiry">Billing Inquiry</option>
+                      <option value="Feature Request">Feature Request</option>
+                      <option value="Partnership">Partnership</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                      Message *
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows="5"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1E3A5F] focus:border-transparent transition-all resize-vertical"
+                      placeholder="How can we help you?"
+                      required
+                      aria-required="true"
+                      itemProp="text"
+                    ></textarea>
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full bg-[#1E3A5F] text-white py-4 px-6 rounded-lg font-semibold hover:bg-[#2c4d75] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:ring-offset-2"
+                    aria-label="Send message to RankUp"
+                    itemProp="potentialAction"
+                  >
+                    Send Message
+                  </button>
+                </form>
+              </div>
+            </div>
+          )}
+
+          {/* Back to Home */}
+          <div className="text-center mt-12">
+            <a
+              href="/"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#1E3A5F] text-white rounded-lg hover:bg-[#2c4d75] transition-all duration-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:ring-offset-2"
+              aria-label="Go back to homepage"
+            >
+              ← Back to Home
+            </a>
+          </div>
+        </div>
+      </main>
+    </>
   );
 }

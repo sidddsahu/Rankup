@@ -15,7 +15,7 @@ export default function BlogPage() {
   }, [dispatch]);
 
   // SEO Metadata
-  const siteUrl = 'https://yourdomain.com';
+  const siteUrl = 'https://www.rankupp.in';
   const pageTitle = 'RankUp Blog - Expert NEET Preparation Articles & Study Tips';
   const pageDescription = 'Get expert NEET preparation guidance with RankUp Blog. Study tips, Biology, Chemistry, Physics articles, and proven strategies to boost your medical entrance exam scores.';
   const featuredImage = `${siteUrl}/blog-seo-banner.jpg`;

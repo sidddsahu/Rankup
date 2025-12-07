@@ -189,7 +189,7 @@ export default function BlogDetail() {
   }
 
   // SEO Metadata
-  const siteUrl = 'https://yourdomain.com';
+  const siteUrl = 'https://www.rankupp.in';
   const currentUrl = `${siteUrl}/blog/${slug}`;
   const pageTitle = `${blogData.title} - RankUp Blog`;
   const pageDescription = blogData.excerpt || 'Expert NEET preparation guidance and study tips from RankUp.';
