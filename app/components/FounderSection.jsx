@@ -1,3 +1,4 @@
+
 // "use client";
 
 // import { motion } from "framer-motion";
@@ -249,17 +250,17 @@
 //               itemScope
 //               itemType="https://schema.org/CreativeWork"
 //             >
-//               <h2 className="text-2xl font-bold text-gray-900 mb-3" itemProp="headline">My Learning Philosophy</h2>
+//               <h3 className="text-2xl font-bold text-gray-900 mb-3" itemProp="headline">My Learning Philosophy</h3>
 //               <p className="text-gray-700 mb-4" itemProp="description">
 //                 Success isn't about being the smartest - it's about being the most consistent.
 //                 Through my journey, I discovered that the right strategy, daily discipline,
 //                 and smart revision can help any dedicated student achieve their dreams.
 //               </p>
 //               <ul className="text-gray-700 list-disc pl-5 space-y-2" role="list" itemProp="about">
-//                 <li><strong className="font-semibold">Concept Clarity:</strong> Building strong fundamentals that last</li>
-//                 <li><strong className="font-semibold">Smart Revision:</strong> Quality over quantity in study hours</li>
-//                 <li><strong className="font-semibold">Exam Strategy:</strong> Learning what to study and what to skip</li>
-//                 <li><strong className="font-semibold">Consistency:</strong> Small daily steps lead to big results</li>
+//                 <li role="listitem"><strong className="font-semibold">Concept Clarity:</strong> Building strong fundamentals that last</li>
+//                 <li role="listitem"><strong className="font-semibold">Smart Revision:</strong> Quality over quantity in study hours</li>
+//                 <li role="listitem"><strong className="font-semibold">Exam Strategy:</strong> Learning what to study and what to skip</li>
+//                 <li role="listitem"><strong className="font-semibold">Consistency:</strong> Small daily steps lead to big results</li>
 //               </ul>
 //               <meta itemProp="keywords" content="medical education, study techniques, exam strategy, revision methods" />
 //             </motion.div>
@@ -275,7 +276,7 @@
 //               itemScope
 //               itemType="https://schema.org/HowTo"
 //             >
-//               <h2 className="text-2xl font-bold text-gray-900 mb-3" itemProp="name">The Roadmap That Worked For Me</h2>
+//               <h3 className="text-2xl font-bold text-gray-900 mb-3" itemProp="name">The Roadmap That Worked For Me</h3>
 //               <p className="text-gray-600 mb-4" itemProp="description">Follow these 5 proven steps to medical exam success</p>
 //               <div className="grid gap-3" role="list" aria-label="Success steps" itemProp="step" itemScope itemType="https://schema.org/HowToStep">
 //                 <RoadmapStep number={1} title="Strong Foundation" desc="Focus on understanding concepts deeply rather than memorizing" />
@@ -327,7 +328,7 @@
 //               <div className="mt-8 bg-white p-6 rounded-2xl shadow-lg border-t">
 //                 <div className="flex items-center mb-4">
 //                   <FaLightbulb className="text-yellow-500 text-2xl mr-3" aria-hidden="true" />
-//                   <h2 id="expertise-heading" className="text-xl font-bold text-gray-900">Areas of Expertise</h2>
+//                   <h3 id="expertise-heading" className="text-xl font-bold text-gray-900">Areas of Expertise</h3>
 //                 </div>
 //                 <div className="flex flex-wrap gap-3">
 //                   <ExpertiseBadge title="NEET UG Strategy" />
@@ -429,7 +430,7 @@
 //             {/* Trust Section */}
 //             <section aria-labelledby="trust-heading">
 //               <div className="mt-8 bg-white p-6 shadow-xl rounded-2xl border-l-4 border-[#1E3A5F]" itemScope itemType="https://schema.org/CreativeWork">
-//                 <h2 id="trust-heading" className="text-2xl font-bold text-gray-900 mb-2" itemProp="headline">Why Trust My Guidance?</h2>
+//                 <h3 id="trust-heading" className="text-2xl font-bold text-gray-900 mb-2" itemProp="headline">Why Trust My Guidance?</h3>
 //                 <p className="text-gray-700 leading-relaxed text-base" itemProp="description">
 //                   I've walked the path you're on right now. From classroom learning to competitive exams,
 //                   I understand the challenges and know what it takes to succeed. At RankUp, I've distilled
@@ -445,7 +446,7 @@
 //               <div className="mt-8 bg-gradient-to-br from-white to-blue-50 p-6 rounded-2xl shadow-lg">
 //                 <div className="flex items-center mb-4">
 //                   <FaUniversity className="text-blue-600 text-2xl mr-3" aria-hidden="true" />
-//                   <h2 id="timeline-heading" className="text-2xl font-bold text-gray-900">Educational Journey</h2>
+//                   <h3 id="timeline-heading" className="text-2xl font-bold text-gray-900">Educational Journey</h3>
 //                 </div>
 //                 <div className="space-y-4" itemScope itemType="https://schema.org/EducationalOccupationalCredential">
 //                   <TimelineItem year="2017-2018" title="Class 12th Gold Medal" institution="Senior Secondary School" />
@@ -461,7 +462,7 @@
 //               <div className="max-w-6xl mx-auto mt-12">
 //                 <div className="flex items-center mb-4">
 //                   <FaAward className="text-blue-600 text-2xl mr-3" aria-hidden="true" />
-//                   <h2 id="certificates-heading" className="text-xl font-bold text-gray-900">My Achievements & Certificates</h2>
+//                   <h3 id="certificates-heading" className="text-xl font-bold text-gray-900">My Achievements & Certificates</h3>
 //                 </div>
 //                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6" itemScope itemType="https://schema.org/AchieveAction">
 //                   <CertificateCard
@@ -491,8 +492,6 @@
 //                 </div>
 //               </div>
 //             </section>
-
-
 //           </motion.div>
 //         </div>
 //       </div>
@@ -502,7 +501,7 @@
 
 // function Achievement({ icon, title, desc, ...props }) {
 //   return (
-//     <article className="flex gap-4 items-start p-3 hover:bg-blue-50 rounded-lg transition-colors" {...props}>
+//     <article className="flex gap-4 items-start p-3 hover:bg-blue-50 rounded-lg transition-colors" role="listitem" {...props}>
 //       <div className="p-3 bg-white rounded-xl shadow-md flex-shrink-0" aria-hidden="true">
 //         {icon}
 //       </div>
@@ -516,7 +515,7 @@
 
 // function RoadmapStep({ number, title, desc }) {
 //   return (
-//     <article className="flex gap-4 items-start bg-gray-50 p-3 rounded-lg hover:bg-blue-50 transition-colors" itemScope itemProp="itemListElement">
+//     <article className="flex gap-4 items-start bg-gray-50 p-3 rounded-lg hover:bg-blue-50 transition-colors" role="listitem" itemScope itemProp="itemListElement">
 //       <div
 //         className="flex items-center justify-center w-10 h-10 rounded-full bg-[#1E3A5F] text-white font-bold flex-shrink-0"
 //         aria-hidden="true"
@@ -525,7 +524,7 @@
 //         {number}
 //       </div>
 //       <div>
-//         <h3 className="font-semibold text-gray-900 mb-1" itemProp="name">{title}</h3>
+//         <h4 className="font-semibold text-gray-900 mb-1" itemProp="name">{title}</h4>
 //         <p className="text-sm text-gray-600" itemProp="description">{desc}</p>
 //       </div>
 //     </article>
@@ -545,7 +544,7 @@
 //         itemProp="image"
 //       />
 //       <div>
-//         <h3 className="font-semibold text-gray-900 mb-1" itemProp="name">{title}</h3>
+//         <h4 className="font-semibold text-gray-900 mb-1" itemProp="name">{title}</h4>
 //         <p className="text-sm text-gray-600" itemProp="description">{subtitle}</p>
 //       </div>
 //     </article>
@@ -566,7 +565,6 @@
 //   );
 // }
 
-
 // function ExpertiseBadge({ title }) {
 //   return (
 //     <span className="px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full hover:bg-blue-200 transition-colors">
@@ -574,7 +572,6 @@
 //     </span>
 //   );
 // }
-
 "use client";
 
 import { motion } from "framer-motion";
@@ -705,7 +702,7 @@ export default function FounderSection() {
 
               <section aria-labelledby="achievements-heading">
                 <h2 id="achievements-heading" className="sr-only">Academic and Professional Achievements</h2>
-                <div className="space-y-4" itemScope itemProp="hasCredential">
+                <div className="space-y-4" itemScope itemProp="hasCredential" role="list" aria-label="Achievements list">
                   <Achievement
                     icon={<FaStar className="text-yellow-500 text-2xl" aria-hidden="true" />}
                     title="Class 12th Gold Medalist"
@@ -832,7 +829,7 @@ export default function FounderSection() {
                 Through my journey, I discovered that the right strategy, daily discipline,
                 and smart revision can help any dedicated student achieve their dreams.
               </p>
-              <ul className="text-gray-700 list-disc pl-5 space-y-2" role="list" itemProp="about">
+              <ul className="text-gray-700 list-disc pl-5 space-y-2" role="list" itemProp="about" aria-label="Learning philosophy points">
                 <li role="listitem"><strong className="font-semibold">Concept Clarity:</strong> Building strong fundamentals that last</li>
                 <li role="listitem"><strong className="font-semibold">Smart Revision:</strong> Quality over quantity in study hours</li>
                 <li role="listitem"><strong className="font-semibold">Exam Strategy:</strong> Learning what to study and what to skip</li>
@@ -947,7 +944,7 @@ export default function FounderSection() {
 
               <section aria-labelledby="achievements-heading">
                 <h2 id="achievements-heading" className="sr-only">Academic and Professional Achievements</h2>
-                <div className="space-y-4" itemProp="award">
+                <div className="space-y-4" itemProp="award" role="list" aria-label="Achievements list">
                   <Achievement
                     icon={<FaStar className="text-yellow-500 text-2xl" aria-hidden="true" />}
                     title="Class 12th Gold Medalist"
@@ -1077,7 +1074,7 @@ export default function FounderSection() {
 
 function Achievement({ icon, title, desc, ...props }) {
   return (
-    <article className="flex gap-4 items-start p-3 hover:bg-blue-50 rounded-lg transition-colors" role="listitem" {...props}>
+    <article className="flex gap-4 items-start p-3 hover:bg-blue-50 rounded-lg transition-colors" {...props}>
       <div className="p-3 bg-white rounded-xl shadow-md flex-shrink-0" aria-hidden="true">
         {icon}
       </div>
@@ -1091,7 +1088,7 @@ function Achievement({ icon, title, desc, ...props }) {
 
 function RoadmapStep({ number, title, desc }) {
   return (
-    <article className="flex gap-4 items-start bg-gray-50 p-3 rounded-lg hover:bg-blue-50 transition-colors" role="listitem" itemScope itemProp="itemListElement">
+    <article className="flex gap-4 items-start bg-gray-50 p-3 rounded-lg hover:bg-blue-50 transition-colors" itemScope itemProp="itemListElement">
       <div
         className="flex items-center justify-center w-10 h-10 rounded-full bg-[#1E3A5F] text-white font-bold flex-shrink-0"
         aria-hidden="true"
