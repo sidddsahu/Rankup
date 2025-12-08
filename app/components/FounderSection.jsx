@@ -129,7 +129,7 @@
 
 //               <section aria-labelledby="achievements-heading">
 //                 <h2 id="achievements-heading" className="sr-only">Academic and Professional Achievements</h2>
-//                 <div className="space-y-4" itemScope itemProp="hasCredential">
+//                 <div className="space-y-4" itemScope itemProp="hasCredential" role="list" aria-label="Achievements list">
 //                   <Achievement
 //                     icon={<FaStar className="text-yellow-500 text-2xl" aria-hidden="true" />}
 //                     title="Class 12th Gold Medalist"
@@ -256,7 +256,7 @@
 //                 Through my journey, I discovered that the right strategy, daily discipline,
 //                 and smart revision can help any dedicated student achieve their dreams.
 //               </p>
-//               <ul className="text-gray-700 list-disc pl-5 space-y-2" role="list" itemProp="about">
+//               <ul className="text-gray-700 list-disc pl-5 space-y-2" role="list" itemProp="about" aria-label="Learning philosophy points">
 //                 <li role="listitem"><strong className="font-semibold">Concept Clarity:</strong> Building strong fundamentals that last</li>
 //                 <li role="listitem"><strong className="font-semibold">Smart Revision:</strong> Quality over quantity in study hours</li>
 //                 <li role="listitem"><strong className="font-semibold">Exam Strategy:</strong> Learning what to study and what to skip</li>
@@ -371,7 +371,7 @@
 
 //               <section aria-labelledby="achievements-heading">
 //                 <h2 id="achievements-heading" className="sr-only">Academic and Professional Achievements</h2>
-//                 <div className="space-y-4" itemProp="award">
+//                 <div className="space-y-4" itemProp="award" role="list" aria-label="Achievements list">
 //                   <Achievement
 //                     icon={<FaStar className="text-yellow-500 text-2xl" aria-hidden="true" />}
 //                     title="Class 12th Gold Medalist"
@@ -501,7 +501,7 @@
 
 // function Achievement({ icon, title, desc, ...props }) {
 //   return (
-//     <article className="flex gap-4 items-start p-3 hover:bg-blue-50 rounded-lg transition-colors" role="listitem" {...props}>
+//     <article className="flex gap-4 items-start p-3 hover:bg-blue-50 rounded-lg transition-colors" {...props}>
 //       <div className="p-3 bg-white rounded-xl shadow-md flex-shrink-0" aria-hidden="true">
 //         {icon}
 //       </div>
@@ -515,7 +515,7 @@
 
 // function RoadmapStep({ number, title, desc }) {
 //   return (
-//     <article className="flex gap-4 items-start bg-gray-50 p-3 rounded-lg hover:bg-blue-50 transition-colors" role="listitem" itemScope itemProp="itemListElement">
+//     <article className="flex gap-4 items-start bg-gray-50 p-3 rounded-lg hover:bg-blue-50 transition-colors" itemScope itemProp="itemListElement">
 //       <div
 //         className="flex items-center justify-center w-10 h-10 rounded-full bg-[#1E3A5F] text-white font-bold flex-shrink-0"
 //         aria-hidden="true"
@@ -572,6 +572,7 @@
 //     </span>
 //   );
 // }
+
 "use client";
 
 import { motion } from "framer-motion";
@@ -702,7 +703,7 @@ export default function FounderSection() {
 
               <section aria-labelledby="achievements-heading">
                 <h2 id="achievements-heading" className="sr-only">Academic and Professional Achievements</h2>
-                <div className="space-y-4" itemScope itemProp="hasCredential" role="list" aria-label="Achievements list">
+                <div className="space-y-4" itemScope itemProp="hasCredential">
                   <Achievement
                     icon={<FaStar className="text-yellow-500 text-2xl" aria-hidden="true" />}
                     title="Class 12th Gold Medalist"
@@ -829,11 +830,11 @@ export default function FounderSection() {
                 Through my journey, I discovered that the right strategy, daily discipline,
                 and smart revision can help any dedicated student achieve their dreams.
               </p>
-              <ul className="text-gray-700 list-disc pl-5 space-y-2" role="list" itemProp="about" aria-label="Learning philosophy points">
-                <li role="listitem"><strong className="font-semibold">Concept Clarity:</strong> Building strong fundamentals that last</li>
-                <li role="listitem"><strong className="font-semibold">Smart Revision:</strong> Quality over quantity in study hours</li>
-                <li role="listitem"><strong className="font-semibold">Exam Strategy:</strong> Learning what to study and what to skip</li>
-                <li role="listitem"><strong className="font-semibold">Consistency:</strong> Small daily steps lead to big results</li>
+              <ul className="text-gray-700 list-disc pl-5 space-y-2" itemProp="about" aria-label="Learning philosophy points">
+                <li><strong className="font-semibold">Concept Clarity:</strong> Building strong fundamentals that last</li>
+                <li><strong className="font-semibold">Smart Revision:</strong> Quality over quantity in study hours</li>
+                <li><strong className="font-semibold">Exam Strategy:</strong> Learning what to study and what to skip</li>
+                <li><strong className="font-semibold">Consistency:</strong> Small daily steps lead to big results</li>
               </ul>
               <meta itemProp="keywords" content="medical education, study techniques, exam strategy, revision methods" />
             </motion.div>
@@ -851,7 +852,7 @@ export default function FounderSection() {
             >
               <h3 className="text-2xl font-bold text-gray-900 mb-3" itemProp="name">The Roadmap That Worked For Me</h3>
               <p className="text-gray-600 mb-4" itemProp="description">Follow these 5 proven steps to medical exam success</p>
-              <div className="grid gap-3" role="list" aria-label="Success steps" itemProp="step" itemScope itemType="https://schema.org/HowToStep">
+              <div className="grid gap-3" itemProp="step" itemScope itemType="https://schema.org/HowToStep">
                 <RoadmapStep number={1} title="Strong Foundation" desc="Focus on understanding concepts deeply rather than memorizing" />
                 <RoadmapStep number={2} title="Consistent Learning" desc="Regular study schedule with proper breaks and revisions" />
                 <RoadmapStep number={3} title="Smart Preparation" desc="Identifying high-yield topics and mastering them thoroughly" />
@@ -895,8 +896,7 @@ export default function FounderSection() {
               </div>
             </motion.div>
 
-
-             {/* Expertise Section */}
+            {/* Expertise Section */}
             <section aria-labelledby="expertise-heading">
               <div className="mt-8 bg-white p-6 rounded-2xl shadow-lg border-t">
                 <div className="flex items-center mb-4">
@@ -944,7 +944,7 @@ export default function FounderSection() {
 
               <section aria-labelledby="achievements-heading">
                 <h2 id="achievements-heading" className="sr-only">Academic and Professional Achievements</h2>
-                <div className="space-y-4" itemProp="award" role="list" aria-label="Achievements list">
+                <div className="space-y-4" itemProp="award">
                   <Achievement
                     icon={<FaStar className="text-yellow-500 text-2xl" aria-hidden="true" />}
                     title="Class 12th Gold Medalist"
