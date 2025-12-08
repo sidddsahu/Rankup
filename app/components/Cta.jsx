@@ -23,7 +23,7 @@ export const metadata = {
 export default function Cta() {
   return (
     <section
-      className="relative overflow-hidden bg-[#fefcfc] py-20"
+      className="relative overflow-hidden bg-[#fefcfc] pb-20"
       aria-label="RankUp NEET-UG Exam Preparation App Download Section"
     >
       {/* Decorative Glass Shapes */}
