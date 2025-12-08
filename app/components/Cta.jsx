@@ -82,7 +82,7 @@ export default function Cta() {
           <div className="relative w-full md:w-[480px] flex justify-center items-center">
             {/* Main Screen */}
             <Image
-              src="/screen1.png"
+              src="/screen1.webp"
               alt="RankUp NEET-UG Learning App Interface"
               width={500}
               height={900}
@@ -92,7 +92,7 @@ export default function Cta() {
 
             {/* Overlapping Screen */}
             <Image
-              src="/screen2.png"
+              src="/screen2.webp"
               alt="RankUp Mock Tests & AI Revision Features"
               width={300}
               height={600}

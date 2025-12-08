@@ -20,7 +20,7 @@ export default function Footer() {
                <div className="flex items-center gap-2">
 <a href="/">
           <img
-            src="/logoss.png"
+            src="/logoss.webp"
             alt="Rankup Logo"
             className="h-10  object-contain"
           />

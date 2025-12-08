@@ -13,7 +13,8 @@ export default function Hero({ playStore = "#", appStore = "#" }) {
         "@id": "https://www.rankupp.in/#org",
         "name": "RankUp",
         "url": "https://www.rankupp.in/",
-        "logo": "https://www.rankupp.in/logo.png",
+        // NOTE: use optimized logo (webp/svg) in production
+        "logo": "https://www.rankupp.in/logo.webp",
         "sameAs": [
           "https://www.facebook.com/yourpage",
           "https://twitter.com/yourhandle",
@@ -41,7 +42,8 @@ export default function Hero({ playStore = "#", appStore = "#" }) {
         "operatingSystem": "ANDROID, iOS, Web",
         "description":
           "NEET-UG preparation app with flashcards, QBank, mock tests and AI analytics.",
-        "image": "https://www.rankupp.in/og-hero.png",
+        // use optimized hero social image (AVIF/WebP)
+        "image": "https://www.rankupp.in/og-hero.webp",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -54,39 +56,48 @@ export default function Hero({ playStore = "#", appStore = "#" }) {
   return (
     <>
       <header
-        className="relative w-full h-full py-8 overflow-hidden"
+        className="relative w-full h-[520px] md:h-[640px] py-8 overflow-hidden"
         role="banner"
         aria-label="RankUp hero"
       >
-        {/* Background Images */}
-        <div className="absolute inset-0">
+        {/* Background wrapper - Image fill requires parent position relative */}
+        <div className="absolute inset-0 -z-10">
+          {/*
+            -- Mobile LCP image: priority (this is the image Lighthouse flagged)
+            -- Provide sizes so Next chooses smaller images on small viewports
+          */}
           <Image
-            src="/deepak3.png"
-            alt="RankUp NEET-UG preparation interface preview"
-            fill
-            priority
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover"
-          />
-
-          <Image
-            src="/deepak2.png"
+            src="/deepak2.webp"               // replace with deepak2.webp after conversion
             alt="RankUp mobile NEET practice preview"
             fill
-            priority
-            sizes="100vw"
+            priority                       // ONLY the LCP image gets priority
+            sizes="(max-width: 768px) 100vw, 600px"
             className="object-cover md:hidden"
+            // for additional hint to browser - next/image forwards attributes, but this is safe
+            fetchPriority="high"
+          />
+
+          {/* Desktop/large view image - lazy (non-blocking) */}
+          <Image
+            src="/deepak3.webp"               // replace with deepak3.webp after conversion
+            alt="RankUp NEET-UG preparation interface preview"
+            fill
+            loading="lazy"                  // do not block initial paint on mobile
+            sizes="(min-width: 769px) 50vw, 100vw"
+            className="object-cover hidden md:block"
+            // lower priority for browser
+            fetchPriority="low"
           />
         </div>
 
         {/* Overlay */}
         <div
-          className="absolute inset-0 bg-gradient-to-r from-[rgba(0,0,0,0.65)] to-transparent"
+          className="absolute inset-0 bg-gradient-to-r from-[rgba(0,0,0,0.65)] to-transparent -z-5"
           aria-hidden="true"
         />
 
         {/* Main Content */}
-        <div className="relative top-10 z-10 py-20 md:py-32 px-6 md:px-16 text-white max-w-4xl">
+        <div className="relative z-10 py-20 md:py-32 px-6 md:px-16 text-white max-w-4xl">
           <p
             className="text-sm uppercase tracking-wide text-purple-200 font-medium"
             aria-hidden
@@ -146,10 +157,11 @@ export default function Hero({ playStore = "#", appStore = "#" }) {
           </nav>
         </div>
 
-        {/* JSON-LD SEO */}
+        {/* JSON-LD SEO (non-blocking) */}
         <Script
           id="hero-jsonld"
           type="application/ld+json"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </header>

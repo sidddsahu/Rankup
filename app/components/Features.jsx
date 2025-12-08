@@ -275,7 +275,7 @@ export default function Features() {
 
               <div className="mt-4  rounded-xl border  flex flex-col items-center justify-center">
                 <Image
-  src="/screen.png"
+  src="/screen.webp"
   alt="RankUp smart daily plan preview showing tasks and progress"
   width={250}     // koi bhi large value (Next.js ko ratio ke liye chahiye)
   height={250}    // chhoti height

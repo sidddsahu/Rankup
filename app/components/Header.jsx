@@ -35,7 +35,7 @@ export default function Header() {
             onClick={handleLinkClick}
           >
             <img
-              src="/logoss.png"
+              src="/logoss.webp"
               alt="Rankup Logo - Professional Ranking Platform"
               className="h-10 object-contain"
               width={200}

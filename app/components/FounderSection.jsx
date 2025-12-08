@@ -179,7 +179,7 @@ export default function FounderSection() {
               <div className="grid grid-cols-2 gap-4">
                 <figure itemProp="associatedMedia" itemScope itemType="https://schema.org/ImageObject">
                   <img
-                    src="/goldmedalce.jpg"
+                    src="/goldmedalce.webp"
                     alt="NEET PG Rank 1731 Certificate - RankUp Medical Education Founder Achievement"
                     className="rounded-3xl shadow-xl border-4 border-white object-cover md:h-56 md:w-full h-full w-full"
                     loading="lazy"
@@ -192,7 +192,7 @@ export default function FounderSection() {
                 </figure>
                 <figure itemProp="associatedMedia" itemScope itemType="https://schema.org/ImageObject">
                   <img
-                    src="/medal.jpg"
+                    src="/medal.webp"
                     alt="MBBS Gold Medal Achievement - Medical College Excellence Award"
                     className="rounded-3xl shadow-xl border-4 border-white object-cover md:h-56 md:w-full h-full w-full"
                     loading="lazy"
@@ -205,7 +205,7 @@ export default function FounderSection() {
                 </figure>
                 <figure itemProp="associatedMedia" itemScope itemType="https://schema.org/ImageObject">
                   <img
-                    src="mbbs.jpg"
+                    src="mbbs.webp"
                     alt="Medical College Founder Portrait - RankUp Medical Mentor Profile"
                     className="rounded-3xl shadow-xl border-4 border-white object-cover md:h-56 md:w-full h-full w-full"
                     loading="lazy"
@@ -218,7 +218,7 @@ export default function FounderSection() {
                 </figure>
                 <figure itemProp="associatedMedia" itemScope itemType="https://schema.org/ImageObject">
                   <img
-                    src="upsc.jpg"
+                    src="upsc.webp"
                     alt="Class 12th Gold Medal Certificate - Academic Excellence Proof"
                     className="rounded-3xl shadow-xl border-4 border-white object-cover md:h-56 md:w-full h-full w-full"
                     loading="lazy"
