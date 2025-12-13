@@ -235,7 +235,7 @@ export default function BlogDetail() {
       <section className="min-h-screen bg-gradient-to-br from-[#F7FAFF] to-[#EDF3FB] py-12 px-6">
         {/* Hero Section */}
         <div className="max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl mb-10 bg-white/70 backdrop-blur-xl border border-white/40">
-          <div className="h-[260px] md:h-[380px] overflow-hidden">
+          <div className="h-[360px] md:h-[480px] overflow-hidden">
             <img
               src={blogData.featuredImage || '/blog-placeholder.jpg'}
               alt={blogData.title}

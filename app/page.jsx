@@ -6,6 +6,8 @@ import Cta from './components/Cta';
 import WhyChooseUs from './components/WhyChooseUs';
 import FounderSection from './components/FounderSection';
 
+
+
 export const dynamic = 'force-dynamic';
 
 export default function Page() {
@@ -25,6 +27,9 @@ export default function Page() {
 
 
         <section className="container py-16"><Features/></section>
+         {/* <section className=" text-white"><GoogleFormWaitlist/></section> */}
+
+         {/* <section className=" text-white"><EnhancedWaitlistBanner/></section> */}
          <Cta className="" />
 
          <section className=" text-white"><WhyChooseUs/></section>

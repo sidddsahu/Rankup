@@ -261,7 +261,7 @@ export default function BlogPage() {
                       itemType="https://schema.org/BlogPosting"
                       itemID={`${siteUrl}/blog/${blog.slug}`}
                     >
-                      <div className="h-52 overflow-hidden">
+                      <div className="h-full overflow-hidden">
                         <img
                           src={blog.featuredImage || '/blog-placeholder.jpg'}
                           alt={blog.title}
