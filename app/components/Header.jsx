@@ -66,7 +66,7 @@ export default function Header() {
           </Link>
 
           <Link
-            href="/download"
+            href="/"
             className="px-6 py-2 border border-white text-white rounded-full text-base font-medium hover:bg-white hover:text-[#624A76] transition flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-purple-300"
             aria-label="Download Rankup application"
           >
@@ -149,15 +149,7 @@ export default function Header() {
                 Contact Us
               </Link>
 
-              <Link
-                href="/download"
-                className="px-4 py-3 border border-white text-white rounded-full text-lg font-medium hover:bg-white hover:text-[#624A76] transition flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-purple-300"
-                onClick={handleLinkClick}
-                aria-label="Download Rankup application"
-              >
-                Download Now
-                <span aria-hidden="true">➜</span>
-              </Link>
+             
             </nav>
           </div>
         </div>
