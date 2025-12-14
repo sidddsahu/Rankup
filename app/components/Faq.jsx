@@ -551,7 +551,7 @@ export default function Faq() {
                   Contact Support Team
                 </Link>
                 <Link
-                  href="/features"
+                  href="#feature"
                   className="px-6 py-3 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 text-center transition-colors"
                   aria-label="Explore RankUp features"
                 >

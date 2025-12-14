@@ -97,7 +97,7 @@ export default function Header() {
         >
           <div
             id="mobile-menu"
-            className="bg-[#624A76] w-64 h-full p-6 shadow-2xl transform transition-all"
+            className="bg-[#295176] w-64 h-full p-6 shadow-2xl transform transition-all"
           >
             {/* Close Button */}
             <button
@@ -129,6 +129,24 @@ export default function Header() {
                 aria-label="Frequently asked questions"
               >
                 FAQs
+              </Link>
+
+                <Link
+                href="/about"
+                className="text-white text-lg font-medium hover:text-purple-200 transition py-2 px-4 focus:outline-none focus:ring-2 focus:ring-purple-300 rounded"
+                onClick={handleLinkClick}
+                aria-label="Frequently asked questions"
+              >
+                About
+              </Link>
+
+                <Link
+                href="/contact"
+                className="text-white text-lg font-medium hover:text-purple-200 transition py-2 px-4 focus:outline-none focus:ring-2 focus:ring-purple-300 rounded"
+                onClick={handleLinkClick}
+                aria-label="Frequently asked questions"
+              >
+                Contact Us
               </Link>
 
               <Link

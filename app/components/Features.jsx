@@ -469,7 +469,7 @@ export default function Features() {
         />
       </Head>
 
-      <section
+      <section id="feature"
         className="relative py-10 bg-gradient-to-br from-white via-[#f3f9ff] to-[#e7f3ff] overflow-hidden"
         aria-labelledby="features-heading"
         role="region"

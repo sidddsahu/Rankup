@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaInstagram, FaYoutube, FaFacebook, FaGooglePlay, FaApple } from "react-icons/fa";
 
 export default function Footer() {
@@ -18,13 +19,13 @@ export default function Footer() {
           {/* Brand */}
           <div>
                <div className="flex items-center gap-2">
-<a href="/">
+<Link href="/">
           <img
             src="/logoss.webp"
             alt="Rankup Logo"
             className="h-10  object-contain"
           />
-          </a>
+          </Link>
 
         </div>
 
@@ -36,9 +37,9 @@ export default function Footer() {
             {/* Social icons */}
             <div className="flex gap-4 mt-5">
               {[FaInstagram, FaYoutube, FaFacebook].map((Icon, i) => (
-                <a key={i} href="#" className="text-2xl hover:text-blue-300 transition">
+                <Link key={i} href="#" className="text-2xl hover:text-blue-300 transition">
                   <Icon />
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -47,11 +48,11 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-semibold mb-4">Study Tools</h3>
             <ul className="space-y-3 text-blue-100">
-              <li><a href="#" className="hover:text-white transition">Flashcards (Spaced Repetition)</a></li>
-              <li><a href="#" className="hover:text-white transition">Q-Bank (Topic Wise)</a></li>
-              <li><a href="#" className="hover:text-white transition">Grand Tests + Mini Tests</a></li>
-              <li><a href="#" className="hover:text-white transition">AI Performance Analytics</a></li>
-              <li><a href="#" className="hover:text-white transition">Revision Planner</a></li>
+              <li><Link href="#" className="hover:text-white transition">Flashcards (Spaced Repetition)</Link></li>
+              <li><Link href="#" className="hover:text-white transition">Q-Bank (Topic Wise)</Link></li>
+              <li><Link href="#" className="hover:text-white transition">Major Tests + Minor Tests</Link></li>
+              <li><Link href="#" className="hover:text-white transition">AI Performance Analytics</Link></li>
+              <li><Link href="#" className="hover:text-white transition">Revision Planner</Link></li>
             </ul>
           </div>
 
@@ -59,11 +60,11 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-semibold mb-4">For Students</h3>
             <ul className="space-y-3 text-blue-100">
-              <li><a href="#" className="hover:text-white transition">NEET-UG</a></li>
-              <li><a href="#" className="hover:text-white transition">NEET-PG</a></li>
-              <li><a href="#" className="hover:text-white transition">FMGE</a></li>
-              <li><a href="#" className="hover:text-white transition">Last-Minute Revision Decks</a></li>
-              <li><a href="#" className="hover:text-white transition">Subject-wise Syllabus</a></li>
+              <li><Link href="#" className="hover:text-white transition">NEET-UG</Link></li>
+              <li><Link href="#" className="hover:text-white transition">Class 11th</Link></li>
+              <li><Link href="#" className="hover:text-white transition">CLass 12th</Link></li>
+              <li><Link href="#" className="hover:text-white transition">Achiever</Link></li>
+              <li><Link href="#" className="hover:text-white transition">Subject-wise Syllabus</Link></li>
             </ul>
           </div>
 
@@ -71,11 +72,11 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-semibold mb-4">Company</h3>
             <ul className="space-y-3 text-blue-100">
-              <li><a href="/about" className="hover:text-white transition">About Us</a></li>
-              <li><a href="/contact" className="hover:text-white transition">Contact</a></li>
-              <li><a href="/privacy" className="hover:text-white transition">Privacy Policy</a></li>
-              <li><a href="/terms" className="hover:text-white transition">Terms & Conditions</a></li>
-              <li><a href="/refund" className="hover:text-white transition">Refund</a></li>
+              <li><Link href="/about" className="hover:text-white transition">About Us</Link></li>
+              <li><Link href="/contact" className="hover:text-white transition">Contact</Link></li>
+              <li><Link href="/privacy" className="hover:text-white transition">Privacy Policy</Link></li>
+              <li><Link href="/terms" className="hover:text-white transition">Terms & Conditions</Link></li>
+              <li><Link href="/refund" className="hover:text-white transition">Refund</Link></li>
             </ul>
           </div>
         </div>
@@ -87,7 +88,7 @@ export default function Footer() {
         <div className="flex  items-center justify-between gap-6">
 
           {/* Play Store */}
-          <a
+          <Link
             href="#"
             className="group flex items-center gap-3 bg-white/10 border border-white/20 backdrop-blur-md
               px-2 py-3 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300
@@ -98,10 +99,10 @@ export default function Footer() {
               <p className="text-xs text-blue-100">GET IT ON</p>
               <p className="text-white font-semibold text-sm md:text-xl">Google Play</p>
             </div>
-          </a>
+          </Link>
 
           {/* Apple Store */}
-          <a
+          <Link
             href="#"
             className="group flex items-center gap-3 bg-white/10 border border-white/20 backdrop-blur-md
               px-6 py-3 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300
@@ -112,7 +113,7 @@ export default function Footer() {
               <p className="text-xs text-blue-100">Download on the</p>
               <p className="text-sm md:text-xl">App Store</p>
             </div>
-          </a>
+          </Link>
         </div>
 
         {/* Copyright */}
