@@ -265,7 +265,7 @@ const EnhancedWaitlistBanner = () => {
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-800/50 rounded-full">
               <FaClock className="text-yellow-400" />
               <span className="text-white">
-                Launch: <span className="font-bold text-yellow-300">December 20, 2024</span>
+                Launch: <span className="font-bold text-yellow-300">December 20, 2025</span>
               </span>
               <span className="text-gray-500 mx-2">•</span>
               <span className="text-cyan-300">

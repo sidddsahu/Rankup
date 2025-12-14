@@ -42,7 +42,7 @@ export default function Testimonials() {
 
         {/* Heading */}
         <h2 className="text-4xl font-extrabold text-center text-white tracking-tight">
-          Trusted by NEET-PG & FMGE Students
+          Trusted by NEET-UG Class 12th & Class 11th Students
         </h2>
         <p className="text-center text-gray-200 mt-3 max-w-2xl mx-auto text-lg">
           RankUp helps aspirants retain what they study so they feel fully prepared.

@@ -5,6 +5,7 @@ import Faq from './components/Faq';
 import Cta from './components/Cta';
 import WhyChooseUs from './components/WhyChooseUs';
 import FounderSection from './components/FounderSection';
+// import EnhancedWaitlistBanner from './components/WaitlistBanner';
 
 
 
