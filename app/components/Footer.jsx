@@ -32,11 +32,13 @@ export default function Footer() {
               Smarter revision for NEET-UG, NEET-PG & FMGE students using Flashcards, Q-banks & AI-driven analytics.
             </p>
 
-            {/* Social icons (SEPARATE LINKS FIXED) */}
+            {/* Social icons (ACCESSIBILITY FIXED) */}
             <div className="flex gap-4 mt-5">
               <Link
                 href="https://www.instagram.com/_rankup__/"
                 target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Rankup on Instagram"
                 className="text-2xl hover:text-blue-300 transition"
               >
                 <FaInstagram />
@@ -45,14 +47,18 @@ export default function Footer() {
               <Link
                 href="https://www.youtube.com/@rankup"
                 target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Rankup on YouTube"
                 className="text-2xl hover:text-blue-300 transition"
               >
                 <FaYoutube />
               </Link>
 
               <Link
-                href="https://www.facebook.com/@rankup"
+                href="https://www.facebook.com/rankup"
                 target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Rankup on Facebook"
                 className="text-2xl hover:text-blue-300 transition"
               >
                 <FaFacebook />
