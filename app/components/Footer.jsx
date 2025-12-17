@@ -18,29 +18,45 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
-               <div className="flex items-center gap-2">
-<Link href="/">
-          <img
-            src="/logoss.webp"
-            alt="Rankup Logo"
-            className="h-10  object-contain"
-          />
-          </Link>
+            <div className="flex items-center gap-2">
+              <Link href="/">
+                <img
+                  src="/logoss.webp"
+                  alt="Rankup Logo"
+                  className="h-10 object-contain"
+                />
+              </Link>
+            </div>
 
-        </div>
-
-            {/* <h2 className="text-3xl font-bold tracking-wide">Rankup</h2> */}
             <p className="text-blue-100 mt-3 leading-relaxed">
               Smarter revision for NEET-UG, NEET-PG & FMGE students using Flashcards, Q-banks & AI-driven analytics.
             </p>
 
-            {/* Social icons */}
+            {/* Social icons (SEPARATE LINKS FIXED) */}
             <div className="flex gap-4 mt-5">
-              {[FaInstagram, FaYoutube, FaFacebook].map((Icon, i) => (
-                <Link key={i} href="#" className="text-2xl hover:text-blue-300 transition">
-                  <Icon />
-                </Link>
-              ))}
+              <Link
+                href="https://www.instagram.com/_rankup__/"
+                target="_blank"
+                className="text-2xl hover:text-blue-300 transition"
+              >
+                <FaInstagram />
+              </Link>
+
+              <Link
+                href="https://www.youtube.com/@rankup"
+                target="_blank"
+                className="text-2xl hover:text-blue-300 transition"
+              >
+                <FaYoutube />
+              </Link>
+
+              <Link
+                href="https://www.facebook.com/@rankup"
+                target="_blank"
+                className="text-2xl hover:text-blue-300 transition"
+              >
+                <FaFacebook />
+              </Link>
             </div>
           </div>
 
@@ -85,9 +101,8 @@ export default function Footer() {
         <div className="border-t border-white/20 mt-12 mb-8"></div>
 
         {/* App Download Buttons */}
-        <div className="flex  items-center justify-between gap-6">
+        <div className="flex items-center justify-between gap-6">
 
-          {/* Play Store */}
           <Link
             href="#"
             className="group flex items-center gap-3 bg-white/10 border border-white/20 backdrop-blur-md
@@ -101,7 +116,6 @@ export default function Footer() {
             </div>
           </Link>
 
-          {/* Apple Store */}
           <Link
             href="#"
             className="group flex items-center gap-3 bg-white/10 border border-white/20 backdrop-blur-md
@@ -116,7 +130,6 @@ export default function Footer() {
           </Link>
         </div>
 
-        {/* Copyright */}
         <p className="text-center text-blue-200 mt-10 text-sm">
           © {new Date().getFullYear()} Rankup • All Rights Reserved
         </p>
