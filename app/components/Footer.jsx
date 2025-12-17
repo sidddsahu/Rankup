@@ -55,7 +55,7 @@ export default function Footer() {
               </Link>
 
               <Link
-                href="https://www.facebook.com/rankup"
+                href="https://www.facebook.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Rankup on Facebook"
