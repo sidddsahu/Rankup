@@ -6,6 +6,7 @@ import Cta from './components/Cta';
 import WhyChooseUs from './components/WhyChooseUs';
 import FounderSection from './components/FounderSection';
 // import EnhancedWaitlistBanner from './components/WaitlistBanner';
+import RequestCallBackForm from './components/RequestCallBackForm';
 
 
 
@@ -26,11 +27,11 @@ export default function Page() {
       <main className="overflow-x-hidden">
         <Hero/>
 
-
+<RequestCallBackForm/>
         <section className="container py-16"><Features/></section>
          {/* <section className=" text-white"><GoogleFormWaitlist/></section> */}
 
-         {/* <section className=" text-white"><EnhancedWaitlistBanner/></section> */}
+         
          <Cta className="" />
 
          <section className=" text-white"><WhyChooseUs/></section>

@@ -314,7 +314,7 @@ export default function BlogPage() {
 
                         <div className="flex items-center justify-between text-xs text-gray-400 mt-2">
                           <span>⏱ {blog.readTime || 5} min read</span>
-                          <span>👁 {blog.viewCount || 0} views</span>
+                        
                         </div>
 
                         {/* Hidden structured data for each blog post */}

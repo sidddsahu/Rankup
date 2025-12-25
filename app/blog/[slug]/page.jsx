@@ -271,7 +271,7 @@ export default function BlogDetail() {
             <div className="mt-6 flex flex-wrap items-center gap-6 text-gray-500 text-sm">
               <span>✍️ {authorName}</span>
               <span>⏱ {blogData.readTime || 5} min read</span>
-              <span>👁 {blogData.viewCount || 0} views</span>
+             
             </div>
 
             {/* Tags */}
