@@ -22,7 +22,7 @@ export default function RequestCallbackPopup() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowPopup(true);
-    }, 10000);
+    }, 20000);
 
     return () => clearTimeout(timer);
   }, []);

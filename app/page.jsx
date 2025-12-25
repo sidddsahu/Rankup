@@ -27,9 +27,10 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <main className="overflow-x-hidden">
         <Hero/>
-<ComingSoonPopup/>
 
+<ComingSoonPopup/>
 <RequestCallBackForm/>
+
         <section className="container py-16"><Features/></section>
          {/* <section className=" text-white"><GoogleFormWaitlist/></section> */}
 
