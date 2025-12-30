@@ -45,7 +45,7 @@ export default function Footer() {
               </Link>
 
               <Link
-                href="https://www.youtube.com/@rankup"
+                href="https://www.youtube.com/@RankupEducationPlatformNeet"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Rankup on YouTube"
@@ -55,7 +55,7 @@ export default function Footer() {
               </Link>
 
               <Link
-                href="https://www.facebook.com/"
+                href="https://www.facebook.com/share/14VzXnVSy9g/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Rankup on Facebook"
