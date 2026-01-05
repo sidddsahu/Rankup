@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 export const fetchFAQs = createAsyncThunk(
   'faq/fetchFAQs',
   async () => {
-    const response = await fetch('https://rankup-api-temp.onrender.com/api/v1/faq');
+    const response = await fetch('https://api.rankupp.in/api/v1/faq');
     const data = await response.json();
 
     if (data.status && data.data) {

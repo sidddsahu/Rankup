@@ -5,7 +5,7 @@ export const fetchBlogs = createAsyncThunk(
   'blog/fetchBlogs',
   async ({ limit = 10, offset = 0 } = {}) => {
     const response = await fetch(
-      `https://rankup-api-temp.onrender.com/api/v1/blog?limit=${limit}&offset=${offset}`
+      `https://api.rankupp.in/api/v1/blog?limit=${limit}&offset=${offset}`
     );
 
     if (!response.ok) {
@@ -25,7 +25,7 @@ export const fetchBlogBySlug = createAsyncThunk(
       console.log(`[API] Fetching blog with slug: ${slug}`);
 
       const response = await fetch(
-        `https://rankup-api-temp.onrender.com/api/v1/blog?slug=${slug}`
+        `https://api.rankupp.in/api/v1/blog?slug=${slug}`
       );
 
       if (!response.ok) {

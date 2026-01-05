@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 export const fetchStaticPage = createAsyncThunk(
   'staticPages/fetchStaticPage',
   async (slug) => {
-    const response = await fetch(`https://rankup-api-temp.onrender.com/api/v1/static-pages/slug/${slug}`);
+    const response = await fetch(`https://api.rankupp.in/api/v1/static-pages/slug/${slug}`);
     const data = await response.json();
 
     if (data.status && data.data) {

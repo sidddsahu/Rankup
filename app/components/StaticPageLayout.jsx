@@ -85,7 +85,7 @@ export default function StaticPageLayout({ slug, pageTitle }) {
 
     try {
       const res = await fetch(
-        'https://rankup-api-temp.onrender.com/api/v1/support/send-message',
+        'https://api.rankupp.in/api/v1/support/send-message',
         {
           method: 'POST',
           headers: {
