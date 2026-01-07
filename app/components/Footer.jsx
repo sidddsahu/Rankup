@@ -1,10 +1,161 @@
+// import Link from "next/link";
+// import { FaInstagram, FaYoutube, FaFacebook, FaGooglePlay, FaApple } from "react-icons/fa";
+
+// export default function Footer() {
+//   return (
+//     <footer className="bg-[#1c3b52] text-white pt-16 pb-8 relative overflow-hidden">
+
+//       {/* BG Effects */}
+//       <div className="absolute inset-0">
+//         <div className="absolute w-72 h-72 bg-cyan-400/10 rounded-full blur-3xl top-20 left-10"></div>
+//         <div className="absolute w-64 h-64 bg-blue-300/10 rounded-full blur-3xl bottom-20 right-10"></div>
+//       </div>
+
+//       <div className="relative z-10 max-w-7xl mx-auto px-6">
+
+//         {/* TOP GRID */}
+//         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-10">
+
+//           {/* Brand */}
+//           <div>
+//             <div className="flex items-center gap-2">
+//               <Link href="/">
+//                 <img
+//                   src="/logoss.webp"
+//                   alt="Rankup Logo"
+//                   className="h-10 object-contain"
+//                 />
+//               </Link>
+//             </div>
+
+//             <p className="text-blue-100 mt-3 leading-relaxed">
+//               Smarter revision for NEET-UG, NEET-PG & FMGE students using Flashcards, Q-banks & AI-driven analytics.
+//             </p>
+
+//             {/* Social icons (ACCESSIBILITY FIXED) */}
+//             <div className="flex gap-4 mt-5">
+//               <Link
+//                 href="https://www.instagram.com/_rankup__/"
+//                 target="_blank"
+//                 rel="noopener noreferrer"
+//                 aria-label="Rankup on Instagram"
+//                 className="text-2xl hover:text-blue-300 transition"
+//               >
+//                 <FaInstagram />
+//               </Link>
+
+//               <Link
+//                 href="https://www.youtube.com/@RankupEducationPlatformNeet"
+//                 target="_blank"
+//                 rel="noopener noreferrer"
+//                 aria-label="Rankup on YouTube"
+//                 className="text-2xl hover:text-blue-300 transition"
+//               >
+//                 <FaYoutube />
+//               </Link>
+
+//               <Link
+//                 href="https://www.facebook.com/share/14VzXnVSy9g/?mibextid=wwXIfr"
+//                 target="_blank"
+//                 rel="noopener noreferrer"
+//                 aria-label="Rankup on Facebook"
+//                 className="text-2xl hover:text-blue-300 transition"
+//               >
+//                 <FaFacebook />
+//               </Link>
+//             </div>
+//           </div>
+
+//           {/* Study Tools */}
+//           <div>
+//             <h3 className="text-xl font-semibold mb-4">Study Tools</h3>
+//             <ul className="space-y-3 text-blue-100">
+//               <li><Link href="#" className="hover:text-white transition">Flashcards (Spaced Repetition)</Link></li>
+//               <li><Link href="#" className="hover:text-white transition">Q-Bank (Topic Wise)</Link></li>
+//               <li><Link href="#" className="hover:text-white transition">Major Tests + Minor Tests</Link></li>
+//               <li><Link href="#" className="hover:text-white transition">AI Performance Analytics</Link></li>
+//               <li><Link href="#" className="hover:text-white transition">Revision Planner</Link></li>
+//             </ul>
+//           </div>
+
+//           {/* Student Types */}
+//           <div>
+//             <h3 className="text-xl font-semibold mb-4">For Students</h3>
+//             <ul className="space-y-3 text-blue-100">
+//               <li><Link href="#" className="hover:text-white transition">NEET-UG</Link></li>
+//               <li><Link href="#" className="hover:text-white transition">Class 11th</Link></li>
+//               <li><Link href="#" className="hover:text-white transition">CLass 12th</Link></li>
+//               <li><Link href="#" className="hover:text-white transition">Achiever</Link></li>
+//               <li><Link href="#" className="hover:text-white transition">Subject-wise Syllabus</Link></li>
+//             </ul>
+//           </div>
+
+//           {/* Company */}
+//           <div>
+//             <h3 className="text-xl font-semibold mb-4">Company</h3>
+//             <ul className="space-y-3 text-blue-100">
+//               <li><Link href="/about" className="hover:text-white transition">About Us</Link></li>
+//               <li><Link href="/contact" className="hover:text-white transition">Contact</Link></li>
+//               <li><Link href="/privacy" className="hover:text-white transition">Privacy Policy</Link></li>
+//               <li><Link href="/terms" className="hover:text-white transition">Terms & Conditions</Link></li>
+//               <li><Link href="/refund" className="hover:text-white transition">Refund</Link></li>
+//             </ul>
+//           </div>
+//         </div>
+
+//         {/* Divider */}
+//         <div className="border-t border-white/20 mt-12 mb-8"></div>
+
+//         {/* App Download Buttons */}
+//         <div className="flex items-center justify-between gap-6">
+
+//           <Link
+//             href="#"
+//             className="group flex items-center gap-3 bg-white/10 border border-white/20 backdrop-blur-md
+//               px-2 py-3 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300
+//               hover:-translate-y-1 hover:bg-white/20"
+//           >
+//             <FaGooglePlay className="text-white text-2xl group-hover:scale-110 transition" />
+//             <div>
+//               <p className="text-xs text-blue-100">GET IT ON</p>
+//               <p className="text-white font-semibold text-sm md:text-xl">Google Play</p>
+//             </div>
+//           </Link>
+
+//           <Link
+//             href="#"
+//             className="group flex items-center gap-3 bg-white/10 border border-white/20 backdrop-blur-md
+//               px-6 py-3 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300
+//               hover:-translate-y-1 hover:bg-white/20"
+//           >
+//             <FaApple className="text-white text-2xl group-hover:scale-110 transition" />
+//             <div>
+//               <p className="text-xs text-blue-100">Download on the</p>
+//               <p className="text-sm md:text-xl">App Store</p>
+//             </div>
+//           </Link>
+//         </div>
+
+//         <p className="text-center text-blue-200 mt-10 text-sm">
+//           © {new Date().getFullYear()} Rankup • All Rights Reserved
+//         </p>
+//       </div>
+//     </footer>
+//   );
+// }
+
 import Link from "next/link";
-import { FaInstagram, FaYoutube, FaFacebook, FaGooglePlay, FaApple } from "react-icons/fa";
+import {
+  FaInstagram,
+  FaYoutube,
+  FaFacebook,
+  FaGooglePlay,
+  FaApple,
+} from "react-icons/fa";
 
 export default function Footer() {
   return (
     <footer className="bg-[#1c3b52] text-white pt-16 pb-8 relative overflow-hidden">
-
       {/* BG Effects */}
       <div className="absolute inset-0">
         <div className="absolute w-72 h-72 bg-cyan-400/10 rounded-full blur-3xl top-20 left-10"></div>
@@ -12,33 +163,31 @@ export default function Footer() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-
         {/* TOP GRID */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-10">
-
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2">
               <Link href="/">
                 <img
                   src="/logoss.webp"
-                  alt="Rankup Logo"
+                  alt="RankUp NEET Online Preparation Logo"
                   className="h-10 object-contain"
                 />
               </Link>
             </div>
 
             <p className="text-blue-100 mt-3 leading-relaxed">
-              Smarter revision for NEET-UG, NEET-PG & FMGE students using Flashcards, Q-banks & AI-driven analytics.
+              Smarter NEET online preparation using PYQs, mock tests, flashcards
+              and AI-driven performance analytics.
             </p>
 
-            {/* Social icons (ACCESSIBILITY FIXED) */}
+            {/* Social */}
             <div className="flex gap-4 mt-5">
               <Link
                 href="https://www.instagram.com/_rankup__/"
                 target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Rankup on Instagram"
+                aria-label="RankUp on Instagram"
                 className="text-2xl hover:text-blue-300 transition"
               >
                 <FaInstagram />
@@ -47,8 +196,7 @@ export default function Footer() {
               <Link
                 href="https://www.youtube.com/@RankupEducationPlatformNeet"
                 target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Rankup on YouTube"
+                aria-label="RankUp on YouTube"
                 className="text-2xl hover:text-blue-300 transition"
               >
                 <FaYoutube />
@@ -57,8 +205,7 @@ export default function Footer() {
               <Link
                 href="https://www.facebook.com/share/14VzXnVSy9g/?mibextid=wwXIfr"
                 target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Rankup on Facebook"
+                aria-label="RankUp on Facebook"
                 className="text-2xl hover:text-blue-300 transition"
               >
                 <FaFacebook />
@@ -66,27 +213,81 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Study Tools */}
+          {/* Study Tools (SEO OPTIMIZED) */}
           <div>
             <h3 className="text-xl font-semibold mb-4">Study Tools</h3>
             <ul className="space-y-3 text-blue-100">
-              <li><Link href="#" className="hover:text-white transition">Flashcards (Spaced Repetition)</Link></li>
-              <li><Link href="#" className="hover:text-white transition">Q-Bank (Topic Wise)</Link></li>
-              <li><Link href="#" className="hover:text-white transition">Major Tests + Minor Tests</Link></li>
-              <li><Link href="#" className="hover:text-white transition">AI Performance Analytics</Link></li>
-              <li><Link href="#" className="hover:text-white transition">Revision Planner</Link></li>
+              <li>
+                <Link
+                  href="/neet-previous-year-questions"
+                  className="hover:text-white transition"
+                >
+                  NEET Previous Year Questions (PYQs)
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/neet-mock-test-online"
+                  className="hover:text-white transition"
+                >
+                  NEET Mock Test Online
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/neet-revision-strategy"
+                  className="hover:text-white transition"
+                >
+                  NEET Revision Strategy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/neet-online-preparation"
+                  className="hover:text-white transition"
+                >
+                  Complete NEET Online Preparation
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Student Types */}
+          {/* For Students (INTENT BASED) */}
           <div>
             <h3 className="text-xl font-semibold mb-4">For Students</h3>
             <ul className="space-y-3 text-blue-100">
-              <li><Link href="#" className="hover:text-white transition">NEET-UG</Link></li>
-              <li><Link href="#" className="hover:text-white transition">Class 11th</Link></li>
-              <li><Link href="#" className="hover:text-white transition">CLass 12th</Link></li>
-              <li><Link href="#" className="hover:text-white transition">Achiever</Link></li>
-              <li><Link href="#" className="hover:text-white transition">Subject-wise Syllabus</Link></li>
+              <li>
+                <Link
+                  href="/neet-online-preparation"
+                  className="hover:text-white transition"
+                >
+                  NEET-UG Aspirants
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/neet-online-preparation"
+                  className="hover:text-white transition"
+                >
+                  Class 11 NEET Preparation
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/neet-online-preparation"
+                  className="hover:text-white transition"
+                >
+                  Class 12 NEET Preparation
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/neet-mock-test-online"
+                  className="hover:text-white transition"
+                >
+                  Test Series & Performance Analysis
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -94,11 +295,31 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-semibold mb-4">Company</h3>
             <ul className="space-y-3 text-blue-100">
-              <li><Link href="/about" className="hover:text-white transition">About Us</Link></li>
-              <li><Link href="/contact" className="hover:text-white transition">Contact</Link></li>
-              <li><Link href="/privacy" className="hover:text-white transition">Privacy Policy</Link></li>
-              <li><Link href="/terms" className="hover:text-white transition">Terms & Conditions</Link></li>
-              <li><Link href="/refund" className="hover:text-white transition">Refund</Link></li>
+              <li>
+                <Link href="/about" className="hover:text-white transition">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-white transition">
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy" className="hover:text-white transition">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms" className="hover:text-white transition">
+                  Terms & Conditions
+                </Link>
+              </li>
+              <li>
+                <Link href="/refund" className="hover:text-white transition">
+                  Refund Policy
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -106,19 +327,20 @@ export default function Footer() {
         {/* Divider */}
         <div className="border-t border-white/20 mt-12 mb-8"></div>
 
-        {/* App Download Buttons */}
+        {/* App Buttons */}
         <div className="flex items-center justify-between gap-6">
-
           <Link
             href="#"
             className="group flex items-center gap-3 bg-white/10 border border-white/20 backdrop-blur-md
               px-2 py-3 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300
               hover:-translate-y-1 hover:bg-white/20"
           >
-            <FaGooglePlay className="text-white text-2xl group-hover:scale-110 transition" />
+            <FaGooglePlay className="text-white text-2xl" />
             <div>
               <p className="text-xs text-blue-100">GET IT ON</p>
-              <p className="text-white font-semibold text-sm md:text-xl">Google Play</p>
+              <p className="text-white font-semibold text-sm md:text-xl">
+                Google Play
+              </p>
             </div>
           </Link>
 
@@ -128,7 +350,7 @@ export default function Footer() {
               px-6 py-3 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300
               hover:-translate-y-1 hover:bg-white/20"
           >
-            <FaApple className="text-white text-2xl group-hover:scale-110 transition" />
+            <FaApple className="text-white text-2xl" />
             <div>
               <p className="text-xs text-blue-100">Download on the</p>
               <p className="text-sm md:text-xl">App Store</p>
@@ -137,9 +359,10 @@ export default function Footer() {
         </div>
 
         <p className="text-center text-blue-200 mt-10 text-sm">
-          © {new Date().getFullYear()} Rankup • All Rights Reserved
+          © {new Date().getFullYear()} RankUp • All Rights Reserved
         </p>
       </div>
     </footer>
   );
 }
+
