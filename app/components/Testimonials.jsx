@@ -9,31 +9,106 @@ import "swiper/css/pagination";
 
 export default function Testimonials() {
   const data = [
-    {
-      name: "Asha R.",
-      text: "RankUp improved my accuracy and helped me retain complex topics with ease.",
-      img: "/profile.png"
-    },
-    {
-      name: "Rohit K.",
-      text: "Spaced repetition flashcards are the best I’ve used. Perfect for medical prep!",
-      img: "/profile.png"
-    },
-    {
-      name: "Sarita P.",
-      text: "Mock analytics showed exactly where I was losing marks. Huge confidence boost.",
-      img: "/profile.png"
-    },
      {
-      name: "Rohit K.",
-      text: "Spaced repetition flashcards are the best I’ve used. Perfect for medical prep!",
-      img: "/profile.png"
-    },
-    {
-      name: "Sarita P.",
-      text: "Mock analytics showed exactly where I was losing marks. Huge confidence boost.",
-      img: "/profile.png"
-    }
+    name: "Asha R.",
+    text: "RankUp improved my accuracy and helped me retain complex topics with ease.",
+    img: "/download.jpeg"
+  },
+  {
+    name: "Rohit K.",
+    text: "Spaced repetition flashcards are the best I’ve used. Perfect for medical prep!",
+    img: "/download.jpeg"
+  },
+  {
+    name: "Sarita P.",
+    text: "Mock analytics showed exactly where I was losing marks. Huge confidence boost.",
+    img: "/download.jpeg"
+  },
+  {
+    name: "Sapna Sahu",
+    text: "One of the best apps for NEET preparation. PYQs + smart analysis = perfect combination. Must-have app for serious NEET aspirants.",
+    img: "/download.jpeg"
+  },
+  {
+    name: "Harshal Malviya",
+    text: "Great app for NEET preparation. Good quality questions and well-structured tests.",
+    img: "/download.jpeg"
+  },
+  {
+    name: "Harsh",
+    text: "Best app for NEET UG preparation. Very useful for daily practice.",
+    img: "/download.jpeg"
+  },
+  {
+    name: "Sniper's",
+    text: "Best app for NEET preparation. Great mentorship by Dr. Deepak sir. Concepts become very clear.",
+    img: "/download.jpeg"
+  },
+  {
+    name: "Satyam Yadav",
+    text: "Best education platform for NEET aspirants. Very helpful tests and analysis.",
+    img: "/download.jpeg"
+  },
+  {
+    name: "Shivam Sahu Facts",
+    text: "Best education platform for NEET UG students. Highly recommended.",
+    img: "/download.jpeg"
+  },
+  {
+    name: "Siddhant Sahu",
+    text: "RankUp NEET aspirants ke liye ek complete app hai. PYQs, test series aur analysis ka level kaafi achha hai. Concept clarity milti hai aur preparation structured ho jati hai.",
+    img: "/download.jpeg"
+  },
+  {
+    name: "Ankit Verma",
+    text: "Daily practice tests helped me improve speed and accuracy. Analysis feature is very detailed.",
+    img: "/download.jpeg"
+  },
+  {
+    name: "Neha Sharma",
+    text: "Concept-based questions and PYQs make RankUp different from other apps.",
+    img: "/download.jpeg"
+  },
+  {
+    name: "Rahul Patel",
+    text: "RankUp helped me identify weak areas quickly. Smart analytics is a game changer.",
+    img: "/download.jpeg"
+  },
+  {
+    name: "Pooja Mishra",
+    text: "Very student-friendly app. Notes, tests and revision all in one place.",
+    img: "/download.jpeg"
+  },
+  {
+    name: "Aman Singh",
+    text: "Best app for NEET mock tests. Interface is smooth and easy to use.",
+    img: "/download.jpeg"
+  },
+  {
+    name: "Kajal Gupta",
+    text: "Revision becomes easy with RankUp. Flashcards are really helpful before exams.",
+    img: "/download.jpeg"
+  },
+  {
+    name: "Vikas Yadav",
+    text: "Affordable and quality content. Perfect app for NEET UG preparation.",
+    img: "/download.jpeg"
+  },
+  {
+    name: "Ritika Jain",
+    text: "PYQs with explanations helped me understand NCERT concepts better.",
+    img: "/download.jpeg"
+  },
+  {
+    name: "Mohit Choudhary",
+    text: "RankUp gives clear direction for NEET preparation. Tests are very relevant.",
+    img: "/download.jpeg"
+  },
+  {
+    name: "Sneha Kulkarni",
+    text: "Best decision to use RankUp app. Improved my confidence and performance.",
+    img: "/download.jpeg"
+  }
   ];
 
   return (
@@ -85,8 +160,8 @@ export default function Testimonials() {
                       rounded-full
                       overflow-hidden
                       mb-5
-                      ring-4 ring-[#295176]/30
-                      shadow-md
+
+
                     ">
                       <Image
                         src={t.img}
