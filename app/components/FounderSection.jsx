@@ -1031,40 +1031,7 @@ export default function FounderSection() {
             </section>
 
             {/* Certificates Section */}
-            <section aria-labelledby="certificates-heading">
-              <div className="max-w-6xl mx-auto mt-12">
-                <div className="flex items-center mb-4">
-                  <FaAward className="text-blue-600 text-2xl mr-3" aria-hidden="true" />
-                  <h3 id="certificates-heading" className="text-xl font-bold text-gray-900">My Achievements & Certificates</h3>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6" itemScope itemType="https://schema.org/AchieveAction">
-                  <CertificateCard
-                    img="/cert-mbbs.jpg"
-                    title="MBBS Gold Medal"
-                    subtitle="Top Performer — SSMC Rewa"
-                    itemProp="object"
-                  />
-                  <CertificateCard
-                    img="/cert-neetpg.jpg"
-                    title="NEET PG — AIR 1731"
-                    subtitle="National Rank"
-                    itemProp="object"
-                  />
-                  <CertificateCard
-                    img="/cert-cms.jpg"
-                    title="UPSC CMS Qualified"
-                    subtitle="Combined Medical Services"
-                    itemProp="object"
-                  />
-                  <CertificateCard
-                    img="/cert-quiz.jpg"
-                    title="Quick Quiz Champion"
-                    subtitle="Inter-school Competition"
-                    itemProp="object"
-                  />
-                </div>
-              </div>
-            </section>
+          
           </motion.div>
         </div>
       </div>

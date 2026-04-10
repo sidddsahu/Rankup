@@ -8,6 +8,8 @@ import FounderSection from './components/FounderSection';
 // import EnhancedWaitlistBanner from './components/WaitlistBanner';
 import RequestCallBackForm from './components/RequestCallBackForm';
 import ComingSoonPopup from './components/ComingSoonPopup';
+// import GoogleFormWaitlist from './components/GoogleFormWaitlist';
+import EnhancedWaitlistBanner from './components/WaitlistBanner';
 
 
 
@@ -26,22 +28,18 @@ export default function Page() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <main className="overflow-x-hidden">
-        <Hero/>
+        <Hero />
 
-<ComingSoonPopup/>
-<RequestCallBackForm/>
-
-        <section className="container py-16"><Features/></section>
-         {/* <section className=" text-white"><GoogleFormWaitlist/></section> */}
-
-
-         <Cta className="" />
-
-         <section className=" text-white"><WhyChooseUs/></section>
-         <FounderSection/>
-          <section className="text-white"><Testimonials/></section>
+        <ComingSoonPopup />
+        <RequestCallBackForm />
+        <section className="container py-16"><Features /></section>
+        {/* <section className=" text-white"><GoogleFormWaitlist/></section> */}
+        {/* <section className=" text-white"><EnhancedWaitlistBanner /></section> */}
+        <Cta className="" />
+        <section className=" text-white"><WhyChooseUs /></section>
+        <FounderSection />
+        <section className="text-white"><Testimonials /></section>
         <section className="container py-16 "><Faq /></section>
-
         {/* <Footer /> */}
       </main>
     </>

@@ -1,7 +1,9 @@
+
 // components/EnhancedWaitlistBanner.jsx
 "use client";
 
 import { useState, useEffect, useRef } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   FaRocket, FaCheckCircle, FaGift, FaClock,
   FaUsers, FaBrain, FaChartLine, FaBook,
@@ -9,10 +11,21 @@ import {
   FaFire, FaBolt, FaHourglassHalf, FaExclamationTriangle,
   FaSync
 } from 'react-icons/fa';
+import { submitEarlyAccessRequest, resetWelcomeState } from '../../store/slices/welcomeSlice';
 
 const EnhancedWaitlistBanner = () => {
+  const dispatch = useDispatch();
+
+  // Redux state
+  const loading = useSelector((state) => state.welcome.loading);
+  const success = useSelector((state) => state.welcome.success);
+  const error = useSelector((state) => state.welcome.error);
+  const responseData = useSelector((state) => state.welcome.responseData);
+  const statusCode = useSelector((state) => state.welcome.statusCode);
+
+  // Local state
   const [email, setEmail] = useState('');
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [selectedClass, setSelectedClass] = useState('CLASS_12');
   const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [subscriberCount, setSubscriberCount] = useState(347);
   const [timeSinceLastJoin, setTimeSinceLastJoin] = useState(0);
@@ -20,10 +33,26 @@ const EnhancedWaitlistBanner = () => {
   const [recentJoins, setRecentJoins] = useState([]);
   const [urgencyLevel, setUrgencyLevel] = useState('moderate');
   const [timePercentage, setTimePercentage] = useState(100);
+  const [showClassSelector, setShowClassSelector] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const lastUpdateRef = useRef(Date.now());
 
-  // ✅ **UPDATED: 20 दिसंबर 2024 को लॉन्च**
+  // ✅ **UPDATED: 20 दिसंबर 2025 को लॉन्च**
   const launchDate = new Date('December 20, 2025 09:00:00').getTime();
+
+  // Reset success state after 5 seconds
+  useEffect(() => {
+    if (success) {
+      const timer = setTimeout(() => {
+        dispatch(resetWelcomeState());
+        setEmail('');
+        setSelectedClass('CLASS_12');
+        setShowClassSelector(false);
+      }, 5000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [success, dispatch]);
 
   // Countdown Timer with urgency effects
   useEffect(() => {
@@ -118,7 +147,7 @@ const EnhancedWaitlistBanner = () => {
           color: 'text-blue-500',
           bgColor: 'from-blue-900/20 to-indigo-900/20',
           borderColor: 'border-blue-500/30',
-          message: '🚀 COMING SOON: December 20, 2024',
+          message: '🚀 COMING SOON: December 20, 2025',
           icon: <FaRocket />
         };
     }
@@ -170,19 +199,30 @@ const EnhancedWaitlistBanner = () => {
       return;
     }
 
+    if (!selectedClass) {
+      alert('Please select your class');
+      return;
+    }
+
     try {
-      setIsSubmitted(true);
+      setIsSubmitting(true);
+
+      // Dispatch the Redux async thunk
+      dispatch(submitEarlyAccessRequest({
+        email,
+        classValue: selectedClass
+      }));
+
+      // Update local state for UI feedback
       const newCount = subscriberCount + 1;
       setSubscriberCount(newCount);
       setSpotsLeft(500 - newCount);
 
-      setTimeout(() => {
-        setEmail('');
-        setIsSubmitted(false);
-      }, 3000);
     } catch (error) {
       console.error('Error:', error);
       alert('Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -303,6 +343,54 @@ const EnhancedWaitlistBanner = () => {
               </div>
             </div>
 
+            {/* API Status Indicator */}
+            {loading && (
+              <div className="mb-4 p-3 bg-blue-900/30 rounded-lg border border-blue-500/30">
+                <div className="flex items-center gap-2">
+                  <FaSync className="text-blue-400 animate-spin" />
+                  <span className="text-blue-300">Sending your request to RankUp servers...</span>
+                </div>
+              </div>
+            )}
+
+            {/* Error Message */}
+            {error && (
+              <div className="mb-4 p-4 bg-red-900/30 rounded-lg border border-red-500/30">
+                <div className="flex items-center gap-2 mb-2">
+                  <FaExclamationTriangle className="text-red-400" />
+                  <span className="text-red-300 font-bold">Request Failed</span>
+                </div>
+                <p className="text-red-200 text-sm">{error}</p>
+                {statusCode && (
+                  <p className="text-gray-400 text-xs mt-1">Status Code: {statusCode}</p>
+                )}
+                <button
+                  onClick={() => dispatch(resetWelcomeState())}
+                  className="mt-2 px-3 py-1 bg-red-700 hover:bg-red-600 text-white text-sm rounded transition"
+                >
+                  Dismiss
+                </button>
+              </div>
+            )}
+
+            {/* Success Message */}
+            {success && (
+              <div className="mb-4 p-4 bg-green-900/30 rounded-lg border border-green-500/30 animate-pulse">
+                <div className="flex items-center gap-2 mb-2">
+                  <FaCheckCircle className="text-green-400 text-xl" />
+                  <span className="text-green-300 font-bold">Request Submitted Successfully!</span>
+                </div>
+                <p className="text-green-200 text-sm">
+                  ✅ You've secured early access to RankUp! Check your email for confirmation.
+                </p>
+                {responseData && (
+                  <p className="text-gray-300 text-xs mt-1">
+                    Reference ID: {responseData.id || 'N/A'}
+                  </p>
+                )}
+              </div>
+            )}
+
             {/* Features Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
               {features.map((feature, idx) => (
@@ -345,11 +433,11 @@ const EnhancedWaitlistBanner = () => {
               {/* Form Header */}
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-bold text-white mb-2">
-                  {urgencyLevel === 'launched' ? '🎉 App Launched!' : '⏳ Secure Early Access'}
+                  {success ? '🎉 Early Access Granted!' : '⏳ Secure Early Access'}
                 </h3>
                 <p className="text-gray-300">
-                  {urgencyLevel === 'launched'
-                    ? 'Download now from Play Store'
+                  {success
+                    ? 'Welcome to RankUp community!'
                     : 'Be among the first 500 NEET aspirants'}
                 </p>
               </div>
@@ -376,13 +464,24 @@ const EnhancedWaitlistBanner = () => {
               </div>
 
               {/* Form */}
-              {isSubmitted ? (
+              {success ? (
                 <div className="text-center p-6 bg-gradient-to-r from-green-900/30 to-emerald-900/30 rounded-xl">
-                  <FaCheckCircle className="text-green-400 text-5xl mx-auto mb-4" />
+                  <FaCheckCircle className="text-green-400 text-5xl mx-auto mb-4 animate-pulse" />
                   <h4 className="text-xl font-bold text-white">Confirmed! ✅</h4>
                   <p className="text-gray-300 mt-2">
-                    You're #{subscriberCount} in line. Launch notification coming soon!
+                    You're #{subscriberCount} in line. Check your email for confirmation!
                   </p>
+                  <div className="mt-4 p-3 bg-gray-800/50 rounded-lg">
+                    <p className="text-sm text-cyan-300">
+                      Class: <span className="font-bold">
+                        {selectedClass === 'CLASS_11' ? 'Class 11' :
+                         selectedClass === 'CLASS_12' ? 'Class 12' : 'Dropper'}
+                      </span>
+                    </p>
+                    <p className="text-xs text-gray-400 mt-1">
+                      Launch notification coming on Dec 20, 2025
+                    </p>
+                  </div>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -397,22 +496,76 @@ const EnhancedWaitlistBanner = () => {
                       placeholder="neet.student@example.com"
                       className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20"
                       required
+                      disabled={loading}
                     />
+                  </div>
+
+                  {/* Class Selector */}
+                  <div>
+                    <label className="block text-white font-medium mb-2">
+                      Select Your Category
+                    </label>
+                    <div className="grid grid-cols-3 gap-2">
+                      {['CLASS_11', 'CLASS_12', 'DROPPER'].map((classOption) => (
+                        <button
+                          key={classOption}
+                          type="button"
+                          onClick={() => setSelectedClass(classOption)}
+                          className={`py-3 rounded-lg transition-all ${selectedClass === classOption
+                            ? 'bg-gradient-to-r from-cyan-600 to-purple-600 text-white border border-cyan-400'
+                            : 'bg-gray-800 text-gray-300 border border-gray-700 hover:border-gray-500'
+                          }`}
+                          disabled={loading}
+                        >
+                          <div className="text-sm font-medium">
+                            {classOption === 'CLASS_11' ? 'Class 11' :
+                             classOption === 'CLASS_12' ? 'Class 12' : 'Dropper'}
+                          </div>
+                          {selectedClass === classOption && (
+                            <div className="text-xs mt-1 opacity-80">✓ Selected</div>
+                          )}
+                        </button>
+                      ))}
+                    </div>
+                    <p className="text-gray-400 text-xs mt-2">
+                      {selectedClass === 'CLASS_11' ? 'For Class 11 students starting NEET prep' :
+                       selectedClass === 'CLASS_12' ? 'For Class 12 students preparing for NEET 2026' :
+                       'For repeaters/Droppers aiming for NEET 2026'}
+                    </p>
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-cyan-600 to-purple-600 hover:from-cyan-700 hover:to-purple-700 text-white font-bold py-4 px-6 rounded-lg text-lg transition-all hover:scale-[1.02] active:scale-[0.98] shadow-xl flex items-center justify-center gap-2"
+                    disabled={loading || !email || !selectedClass}
+                    className={`w-full bg-gradient-to-r from-cyan-600 to-purple-600 hover:from-cyan-700 hover:to-purple-700 text-white font-bold py-4 px-6 rounded-lg text-lg transition-all hover:scale-[1.02] active:scale-[0.98] shadow-xl flex items-center justify-center gap-2 ${(loading || !email || !selectedClass) ? 'opacity-70 cursor-not-allowed' : ''}`}
                   >
-                    <FaRocket className="animate-bounce" />
-                    {urgencyLevel === 'critical' ? 'LAST CHANCE! Join Now' : 'Join Waitlist'}
-                    <span className="text-xs bg-yellow-500 text-black px-2 py-1 rounded animate-pulse">
-                      #{spotsLeft}
-                    </span>
+                    {loading ? (
+                      <>
+                        <FaSync className="animate-spin" />
+                        Submitting...
+                      </>
+                    ) : (
+                      <>
+                        <FaRocket className="animate-bounce" />
+                        Join Waitlist
+                        <span className="text-xs bg-yellow-500 text-black px-2 py-1 rounded animate-pulse">
+                          #{spotsLeft}
+                        </span>
+                      </>
+                    )}
                   </button>
 
+                  {loading && (
+                    <div className="text-center">
+                      <div className="inline-flex items-center gap-2 text-cyan-300 text-sm">
+                        <FaSync className="animate-spin" />
+                        Connecting to RankUp API...
+                      </div>
+                    </div>
+                  )}
+
                   <div className="text-center text-gray-400 text-sm">
-                    <p>🔒 Your email is safe with us</p>
+                    <p>🔒 Your data is securely sent to RankUp API</p>
                     <p className="mt-1">Only NEET updates, no spam</p>
                   </div>
                 </form>
@@ -429,6 +582,10 @@ const EnhancedWaitlistBanner = () => {
                     <div className="text-yellow-300 font-bold">{spotsLeft}</div>
                     <div className="text-gray-400 text-sm">Available</div>
                   </div>
+                </div>
+                <div className="mt-4 text-center text-xs text-gray-500">
+                  <p>Powered by RankUp Early Access API</p>
+                  <p className="mt-1">POST: https://api.rankupp.in/api/v1/early-access/request</p>
                 </div>
               </div>
             </div>
@@ -447,6 +604,20 @@ const EnhancedWaitlistBanner = () => {
             Don't miss the early bird benefits. Join now and be the first to experience
             AI-powered NEET preparation with RankUp.
           </p>
+
+          {/* API Status */}
+          <div className="mt-6 p-3 bg-gray-800/50 rounded-lg inline-block">
+            <div className="flex items-center gap-2">
+              <div className={`w-2 h-2 rounded-full ${loading ? 'bg-yellow-500 animate-pulse' :
+                error ? 'bg-red-500' :
+                success ? 'bg-green-500 animate-ping' : 'bg-green-500'}`}></div>
+              <span className="text-sm text-gray-300">
+                API Status: {loading ? 'Connecting...' :
+                  error ? 'Error' :
+                  success ? 'Connected ✓' : 'Ready'}
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
