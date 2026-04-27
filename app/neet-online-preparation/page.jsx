@@ -102,6 +102,9 @@ export default function MasterNeetPage() {
                 <Link href="/neet-previous-year-questions" className="block underline">
                   NEET Previous Year Questions (PYQs)
                 </Link>
+                 <Link href="/neet-pyq" className="block underline">
+                   Practice NEET PYQ Chapter-wise 🔥
+                </Link>
                 <Link href="/neet-mock-test-online" className="block underline">
                   NEET Mock Test Online
                 </Link>
