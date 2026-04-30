@@ -105,6 +105,10 @@ export default function MasterNeetPage() {
                  <Link href="/neet-pyq" className="block underline">
                    Practice NEET PYQ Chapter-wise 🔥
                 </Link>
+
+                 <Link href="/ncert-line-by-line-biology" className="block underline">
+                  NEET Biology NCERT Line-by-Line Questions
+                </Link>
                 <Link href="/neet-mock-test-online" className="block underline">
                   NEET Mock Test Online
                 </Link>

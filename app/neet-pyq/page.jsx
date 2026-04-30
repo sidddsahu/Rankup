@@ -1,10 +1,19 @@
-"use client";
-
-import { motion } from "framer-motion";
+export const metadata = {
+  title: "NEET PYQ Chapter-wise (1988–2026) 📚 Free PDF + Solutions 🔥",
+  description:
+    "Download NEET previous year questions chapter-wise with detailed solutions (1988–2026). Practice most repeated PYQs and boost your NEET score fast.",
+  keywords: [
+    "neet pyq",
+    "neet previous year questions",
+    "neet pyq chapter wise",
+    "neet pyq pdf",
+    "neet questions with solutions",
+  ],
+};
 
 export default function NeetPYQPage() {
   const stats = [
-    { label: "Years Covered", value: "1988–2025" },
+    { label: "Years Covered", value: "1988–2026" },
     { label: "Questions", value: "20,000+" },
     { label: "Subjects", value: "3" },
     { label: "Accuracy Boost", value: "95%" },
@@ -31,10 +40,16 @@ export default function NeetPYQPage() {
     },
   ];
 
+  const colorMap = {
+    green: "text-green-600",
+    blue: "text-blue-600",
+    purple: "text-purple-600",
+  };
+
   const faqs = [
     {
       q: "Are NEET PYQs enough for 600+?",
-      a: "Yes, but combine with NCERT revision for best results.",
+      a: "Yes, but combine PYQs with NCERT for best results.",
     },
     {
       q: "How many years PYQs should I solve?",
@@ -51,27 +66,29 @@ export default function NeetPYQPage() {
 
       {/* HERO */}
       <section className="px-6 py-16 text-center">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-2xl md:text-3xl mt-10 font-bold leading-tight"
-        >
+        <h1 className="text-3xl md:text-5xl mt-10 font-bold leading-tight">
           NEET PYQ Chapter-wise{" "}
-          <span className="text-[var(--color-accent)]">(1988–2025)</span>
-        </motion.h1>
+          <span className="text-[var(--color-accent)]">(1988–2026)</span>
+        </h1>
 
         <p className="mt-6 text-lg max-w-2xl mx-auto text-gray-600">
           Practice the most repeated NEET questions with detailed solutions. Boost your score faster 🚀
         </p>
 
         <div className="mt-8 flex justify-center gap-4 flex-wrap">
-          <button className="bg-[var(--color-primary)] text-white px-6 py-3 rounded-xl shadow-lg hover:scale-105 transition">
+          <a
+            href="#"
+            className="bg-[var(--color-primary)] text-white px-6 py-3 rounded-xl shadow-lg hover:scale-105 transition"
+          >
             📥 Download PDF
-          </button>
+          </a>
 
-          <button className="border border-[var(--color-primary)] px-6 py-3 rounded-xl hover:bg-[var(--color-primary)] hover:text-white transition">
+          <a
+            href="/neet-mock-test-online"
+            className="border border-[var(--color-primary)] px-6 py-3 rounded-xl hover:bg-[var(--color-primary)] hover:text-white transition"
+          >
             🧠 Start Practice
-          </button>
+          </a>
         </div>
       </section>
 
@@ -94,7 +111,7 @@ export default function NeetPYQPage() {
         <div className="grid md:grid-cols-3 gap-8">
           {subjects.map((sub, i) => (
             <div key={i} className="bg-white rounded-2xl p-6 shadow-lg hover:scale-105 transition">
-              <h3 className={`text-xl font-semibold mb-4 text-${sub.color}-600`}>
+              <h3 className={`text-xl font-semibold mb-4 ${colorMap[sub.color]}`}>
                 {sub.title}
               </h3>
 
@@ -104,24 +121,52 @@ export default function NeetPYQPage() {
                 ))}
               </ul>
 
-              <button className={`mt-6 w-full ${sub.btn} text-white py-2 rounded-lg hover:opacity-90`}>
+              <a
+                href="/neet-mock-test-online"
+                className={`mt-6 block text-center w-full ${sub.btn} text-white py-2 rounded-lg hover:opacity-90`}
+              >
                 Start Practice
-              </button>
+              </a>
             </div>
           ))}
         </div>
       </section>
 
-      {/* STRATEGY */}
-      <section className="bg-[var(--color-primary)] text-white px-6 py-16 text-center">
-        <h2 className="text-3xl font-bold mb-6">🚀 How to Use PYQs Effectively</h2>
+      {/* SEO CONTENT */}
+      <section className="max-w-4xl mx-auto px-6 py-16 text-gray-700 leading-relaxed">
+        <h2 className="text-2xl font-bold mb-4">
+          NEET Previous Year Questions (PYQ) Chapter-wise
+        </h2>
 
-        <div className="max-w-3xl mx-auto space-y-4 text-lg">
-          <p>✔ Solve chapter-wise first</p>
-          <p>✔ Analyze mistakes deeply</p>
-          <p>✔ Revise weak concepts</p>
-          <p>✔ Attempt full mock tests</p>
-        </div>
+        <p className="mb-4">
+          NEET previous year questions (PYQs) are one of the most powerful resources
+          for exam preparation. By solving chapter-wise NEET PYQs, students can
+          understand the exam pattern, identify important topics, and improve accuracy.
+        </p>
+
+        <p className="mb-4">
+          Practicing NEET PYQs from 1988 to 2026 helps in mastering frequently asked
+          concepts in Biology, Chemistry, and Physics.
+        </p>
+
+        <h3 className="text-xl font-semibold mt-6 mb-2">
+          Why NEET PYQs are important?
+        </h3>
+
+        <ul className="list-disc pl-6 space-y-2">
+          <li>Understand real exam pattern</li>
+          <li>Identify most repeated questions</li>
+          <li>Improve speed and accuracy</li>
+          <li>Strengthen concept clarity</li>
+        </ul>
+
+        <p className="mt-6">
+          Try our{" "}
+          <a href="/neet-mock-test-online" className="text-blue-600 underline">
+            NEET Mock Test
+          </a>{" "}
+          to test your preparation level.
+        </p>
       </section>
 
       {/* FAQ */}
@@ -138,11 +183,33 @@ export default function NeetPYQPage() {
         </div>
       </section>
 
+      {/* FAQ SCHEMA */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((f) => ({
+              "@type": "Question",
+              name: f.q,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: f.a,
+              },
+            })),
+          }),
+        }}
+      />
+
       {/* STICKY CTA */}
       <div className="fixed bottom-0 left-0 w-full bg-white shadow-lg p-4 flex justify-center">
-        <button className="bg-[var(--color-accent)] text-white px-8 py-3 rounded-xl shadow-lg hover:scale-105 transition">
+        <a
+          href="/neet-mock-test-online"
+          className="bg-[var(--color-accent)] text-white px-8 py-3 rounded-xl shadow-lg hover:scale-105 transition"
+        >
           🔥 Start Practicing Now
-        </button>
+        </a>
       </div>
 
     </div>
