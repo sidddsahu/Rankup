@@ -115,6 +115,16 @@ export default function MasterNeetPage() {
                 <Link href="/neet-revision-strategy" className="block underline">
                   NEET Revision Strategy
                 </Link>
+
+                  <Link href="/neet-biology-important-questions" className="block underline">
+                NEET Biology Important Questions
+                </Link>
+                <Link href="/neet-physics-formula-sheet" className="block underline">
+                  NEET Physics Formula Sheet PDF
+                </Link>
+                <Link href="/neet-chemistry-short-notes" className="block underline">
+                  NEET Chemistry Short Notes
+                </Link>
               </div>
             </div>
 
